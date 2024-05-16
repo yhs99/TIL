@@ -12,7 +12,7 @@
 
 ## css syntax (css의 구성)
 
-<image src="./args/css_syntax.png">
+<img src="../htmlpractice/2주차/day_2/args/css_syntax.png">
 
 ```css
 ex) 
