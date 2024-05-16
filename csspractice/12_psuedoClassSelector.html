@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>의사(가상) 클래스 선택자</title>
+  <style>
+    /*     
+    :link  (방문하지 않은 링크에 스타일 적용)
+    :visited (방문한 링크에 스타일 적용)
+    :hover (특정 요소에 마우스 포인터를 올렸을 때 스타일 적용)
+    :active (특정 요소에 클릭하는 순간 스타일 적용)
+    :focus (웹 요소에 초점이 맞춰졌을 때 스타일 적용) 
+    */
+    .box { 
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transition: 3s;
+    }
+    
+    .box:hover { 
+      width: 300px;
+      background-color: yellowgreen;
+    }
+
+    input:focus {
+      background-color: gray;
+      
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+    a:visited {
+      /* 방문했던 페이지 */
+      color: red;
+      text-decoration: none;
+    }
+    li:hover {
+      /* li요소에마우스 포인터를 올리면 */
+      background-color: yellow;
+    }
+
+    a:active {
+      color: rgb(38, 0, 255)
+    }
+
+    .firstUl li:nth-child(odd) { /*홀수 (2n+1)*/
+      border: 1px dotted red;
+    }
+    .firstUl li:nth-child(even) { /*짝수 (2n)*/
+      border: 1px dotted blue;
+    }
+
+    input:checked +label{
+      color:red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div><input type="text"></div>
+  <h1>Web Front 기술</h1>
+  <ul class="firstUl">
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/CSS_basics">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript">JAVASCRIPT</a></li>
+    <li><a href="https://jquery.com/">jQuery</a></li>
+    <li><a href="https://ko.wikipedia.org/wiki/Ajax">ajax</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <input type="radio" name="gender" id="female">
+      <label for="female">여성</label>
+    </li>
+    <li>
+      <input type="radio" name="gender" id="male" checked>
+      <label for="male">남성</label>
+    </li>
+  </ul>
+</body>
+</html>

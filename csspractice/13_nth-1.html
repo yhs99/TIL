@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nth 클래스 선택자</title>
+  <style>
+    .fruits span:first-child { /* class=fruits인 태그의 첫 번째 요소가 span인 경우 */
+      color: red;
+    }
+    .fruits div:first-child { /* class=fruits인 태그의 첫 번째 요소가 div인 경우 */
+      color: blue
+    }
+  </style>
+</head>
+<body>
+  <div class="fruits">
+    <span>사과</span>
+    <span>수박</span>
+    <div>오렌지</div>
+    <p>블루베리</p>
+
+  </div>
+</body>
+</html>

@@ -256,6 +256,34 @@ Sibling Selector는 선택한 태그 이후에 나오는 모든 형제 (동위) 
 ```html
 요소1 ~ 요소2
 ```
+```html
+<style>
+      div ~ p {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sibling 선택자</h1>
+    <p>Sibling 선택자로 스타일을 꾸미면 어떻게 될까요?</p>
+    <p>걍</p>
+    <div>
+      <p>div 내부 p태그 (div의 자식)</p>
+      <p>div 내부 p태그 (div의 자식)</p>
+      <p>div 내부 p태그 (div의 자식)</p>
+    </div>
+    <p>div 외부 p태그1</p>
+    <p>div 외부 p태그2</p>
+    <p>div 외부 p태그3</p>
+    <div>
+      <p>div 내부 p태그 (div의 자식)</p>
+      <p>div 내부 p태그 (div의 자식)</p>
+      <p>div 내부 p태그 (div의 자식)</p>
+    </div>
+    <p>div 외부 p태그1</p>
+    <p>div 외부 p태그2</p>
+    <p>div 외부 p태그3</p>
+```
 
 # (5) 인접 형제 선택자 (adjacent sibling selector)
 ```
@@ -263,6 +291,7 @@ Sibling Selector는 선택한 태그 이후에 나오는 모든 형제 (동위) 
   ...
 }
 ```
+
 ```html
 <style>
     h1 + p {
@@ -284,7 +313,66 @@ Sibling Selector는 선택한 태그 이후에 나오는 모든 형제 (동위) 
 ```
 
 **_정리:_**<br>
+```
 * 자손 선택자 : 부모 자손
 * 자식 선택자 : 부모 > 자식
 * 형제 선택자 : 형제1 ~ 형제2
 * 인접 형제 선택자 : 형제1 + 형제2</i>
+```
+# (7) 가상 클래스 선택자 (Psuedo Class Selector)
+* 선택자에 추가하는 키워드로 요소 상태에 따라 반응하도록 만든 클래스
+* 사용자의 동작에 반응하도록 만든 가상 클래스 (ex: hover, active, focus 등)
+* 특정 위치에 있는 요소 선택하도록 만든 클래스 (ex:nth-child(even짝수,odd홀수,숫자))
+```html
+<style>
+    /*     
+    :link  (방문하지 않은 링크에 스타일 적용)
+    :visited (방문한 링크에 스타일 적용)
+    :hover (특정 요소에 마우스 포인터를 올렸을 때 스타일 적용)
+    :active (특정 요소에 클릭하는 순간 스타일 적용)
+    :focus (웹 요소에 초점이 맞춰졌을 때 스타일 적용) 
+    */
+    .box { 
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      transition: 3s;
+    }
+    
+    .box:hover { 
+      width: 300px;
+      background-color: yellowgreen;
+    }
+
+    input:focus {
+      background-color: gray;
+      
+    }
+
+    a:visited {
+      /* 방문했던 페이지 */
+      color: red;
+      text-decoration: none;
+    }
+    li:hover {
+      /* li요소에마우스 포인터를 올리면 */
+      background-color: yellow;
+    }
+
+    a:active {
+      color: rgb(38, 0, 255)
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div><input type="text"></div>
+  <h1>Web Front 기술</h1>
+  <ul>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/CSS_basics">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript">JAVASCRIPT</a></li>
+    <li><a href="https://jquery.com/">jQuery</a></li>
+    <li><a href="https://ko.wikipedia.org/wiki/Ajax">ajax</a></li>
+  </ul>
+```
