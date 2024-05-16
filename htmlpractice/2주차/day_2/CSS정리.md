@@ -55,3 +55,65 @@ div {
   background-color: aqua;
 }
 ```
+
+## (4) class 선택자 <br>
+- 태그 내부에 class속성을 이용합니다.
+- 동일한 값으로 여러 태그를 선택할 수 있는 선택자
+- 가장 많이 사용하는 선택자이다.
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>class 선택자</title>
+  <style>
+    .bg {
+      background-color: salmon;
+    }
+    .accent {
+      border: 1px dashed #000;
+      padding: 5px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="bg accent">class 선택자</h1>
+  <p class="">태그의 내부에 class속성을 이용합니다.</p>
+  <p class="bg">동일한 값으로 여러 태그를 선택할 수 있는 선택자</p>
+  <p class="">가장 많이 사용되는 선택이다.</p>
+</body>
+</html>
+```
+
+## (5) 그룹 선택자
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그룹 선택자</title>
+  <style>
+    h1, p {
+      text-align: center;
+    }
+
+    p {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>group 선택자</h1>
+  <p>선택자를 이용해 같은 스타일을 여러태그에 적용가능하다.</p>
+</body>
+</html>
+```
+
+# DOM (Document Object Management) 구조
+
+<img src="../../../csspractice/images/DOM.png">
