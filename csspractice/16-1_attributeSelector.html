@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    a {
+      text-decoration: none;
+      font-weight: bold;
+
+    }
+    a[target="_blank"] {
+      padding-right: 22px;
+      background: url(./images/fileicon.png) no-repeat right center;
+      background-size: 20px;
+    }
+
+    /* a[class="button"] { class 속성이 button 요소만 스타일을 적용시킨다.   
+      color: red;
+    } */
+
+    a[class~="button"] { /* class 속성에 button이 포함된 요소 모두 스타일을 적용시킨다.*/
+      color: red;
+    }
+
+    a[href*="wiki"] { /* href속성에 wiki가 포함된 요소 모두 스타일을 적용시킨다. */
+      background-color: yellow;
+    }
+    </style>
+</head>
+<body>
+  <ul>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started" target="_blank">HTML</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/CSS_basics">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript"  class="button">JAVASCRIPT</a></li>
+    <li><a href="https://jquery.com/">jQuery</a></li>
+    <li><a href="https://ko.wikipedia.org/wiki/Ajax" class="button flat">ajax</a></li>
+  </ul>
+</body>
+</html>

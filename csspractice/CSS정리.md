@@ -376,3 +376,86 @@ Sibling Selector는 선택한 태그 이후에 나오는 모든 형제 (동위) 
     <li><a href="https://ko.wikipedia.org/wiki/Ajax">ajax</a></li>
   </ul>
 ```
+
+
+예제) <br>
+테이블을 생성후, 각 행이 교차해서 줄무늬처럼 색상을 적용시키기
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>테이블을 생성후 줄무늬 색상 적용하기</title>
+  <style>
+    table tr:nth-child(2n) {
+      background-color: rgb(107, 107, 107);
+    }
+
+    table tr:nth-child(2n+1) {
+      background-color: rgb(166, 180, 180);
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>HTML</td>
+    </tr>
+    <tr>
+      <td>JAVASCRIPT</td>
+    </tr>
+    <tr>
+      <td>VUE</td>
+    </tr>
+    <tr>
+      <td>ANGULAR</td>
+    </tr>
+    <tr>
+      <td>REACT</td>
+    </tr>
+  </table>
+</body>
+</html>
+```
+
+
+# (8) 가상 요소 선택자 (psuedo element selector)
+
+
+# (9) 속성 선택자 (Attribute Selector)
+: 태그가 가지고 있는 속성이나 속성의 값을 이용해서 선택하는 선택자
+```
+태그명[속성] { 
+  ...
+}
+```
+```html
+<style>
+a[href] {
+      /* a태그의 href 속성이 있는 요소에 스타일 적용 */
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a>메인 메뉴 : </a></li>
+    <li><a href="#">메뉴1</a></li>
+    <li><a href="#">메뉴2</a></li>
+    <li><a href="#">메뉴3</a></li>
+    <li><a href="#">메뉴4</a></li>
+  </ul>
+</body>
+```
+
+|   종류  |        선택요소       |                   예                         |
+|---------|----------------------|----------------------------------------------|
+|[속성]|해당 속성이 있는 요소를 선택|a[href]                                       |
+|[속성]=값|지정한 속성값이 있는 요소|a[target="_blank"]                            |
+|[속성~=값]|지정한 속성 값이 포함된 요소 (단어별)|[class~="button"]                 |
+|[속성&#124;=값]|지정한 속성 값이 포함된 요소 (값-하이픈포함, 단어별)|[class&#124;=ch]|
+|[속성*=값]|지정한 속성 값의 일부가 일치하는 요소|a[href*="wiki"]                   |
+|[속성^=값]|지정한 속성 값으로 시작하는 요소|[title^="eng"]                         |
+|[속성$=값]|지정한 속성 값으로 끝나는 요소|[title$="se"]                            |

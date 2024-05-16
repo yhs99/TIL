@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>속성 선택자</title>
+  <style>
+    ul {
+      /* list에서 bullet없애기 */
+      list-style: none;
+    }
+    
+    li {
+      width: 120px;
+      display: inline-block;
+    }
+
+    li a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a[href] {
+      /* a태그의 href 속성이 있는 요소에 스타일 적용 */
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a>메인 메뉴 : </a></li>
+    <li><a href="#">메뉴1</a></li>
+    <li><a href="#">메뉴2</a></li>
+    <li><a href="#">메뉴3</a></li>
+    <li><a href="#">메뉴4</a></li>
+  </ul>
+</body>
+</html>
