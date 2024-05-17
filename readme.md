@@ -24,8 +24,12 @@
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/26_border">26_border.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/27_margin">27_margin.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/28_display">28_display.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/29_responsiveTable">29_responsiveTable.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/2_universalSelector">2_universalSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/3_tagnameSelector">3_tagnameSelector.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/30_float">30.float.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/30-1_clearEx">30-1_clearEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/30-2_floatEx">30-2_floatEx.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/4_idSelector">4_idSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/5_classSelector">5_classSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/6_groupSelector">6_groupSelector.html</a>
@@ -43,6 +47,7 @@
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/images/china.png">china.png</a>
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/images/fileicon.png">fileicon.png</a>
 │  │  └─ <a href="https://yhs99.github.io/goott/csspractice/images/japan.png">japan.png</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/homework">homework.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/csspractice/practicenth">practicenth.html</a>
 ├─ htmlpractice
 │  ├─ 1주차
