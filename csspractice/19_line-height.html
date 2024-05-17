@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>line-height 속성을 이용한 세로 정렬</title>
+  <style>
+    .heading {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      text-align: center;
+      line-height: 100px; /* height 값과 동일한 값으로 설정시 세로로 정렬이 가능하다.*/
+    }
+
+    .price {
+      background-color: blueviolet;
+      width: 100px;
+      height: 50px;
+    }
+
+    .shadow {
+      font-size: 50px;
+      font-weight: bold;
+      text-shadow: 5px 5px red;
+    }
+    .shadow-ko {
+      font-size: 30px;
+      font-weight: bolder;
+      text-shadow: 3px 3px blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="heading">HTML</div>
+  <span class="price">16,500</span>원
+  <div class="shadow">CSS</div>
+  <div class="shadow-ko">자바스크립트</div>
+</body>
+</html>
