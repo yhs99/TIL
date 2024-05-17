@@ -496,3 +496,4 @@ min-width: 400px;
 
 ## 연습문제)
 이력서 양식을 테이블을 이용해서 만들어보세요 (월요일 9시 30분까지)
+<a href="https://yhs99.github.io/goott/csspractice/homework">숙제 링크</a>
