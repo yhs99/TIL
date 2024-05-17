@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      display: inline-block;
+      width: 100px;
+      border: 2px solid black;
+      text-align: center;;
+    }
+
+    li:hover {
+      background-color: black;
+      color:white
+    }
+
+    a {
+      text-decoration: none;
+    }
+    #big {
+      display: none; /* big 요소를 보이지 않도록 처리함.*/
+    }
+  </style>
+  <script>
+    function sizeUp() {
+      document.getElementById("big").style.display="block";
+    }
+
+    function sizeDown() {
+      document.getElementById("big").style.display="none";
+    }
+  </script>
+</head>
+<body>
+  <nav>
+    <ul>
+      <a href="#"><li>menu1</li></a>
+      <a href="#"><li>menu2</li></a>
+      <a href="#"><li>menu3</li></a>
+    </ul>
+  </nav>
+
+  <div class="small">
+    <img src="../htmlpractice/images/cat.jpg" width="100px" id="small" onmouseover="sizeUp();" onmouseout="sizeDown();">
+  </div>
+  <div class="big">
+    <img src="../htmlpractice/images/cat.jpg" width="500px" id="big" >
+  </div>
+</body>
+</html>

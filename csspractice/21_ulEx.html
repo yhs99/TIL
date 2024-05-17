@@ -9,11 +9,20 @@
       width: 300px;
     }
     a {
-      text-decoration: none;;
+      text-decoration: none;
+      color: black
     }
 
-    li a:hover {
-      color:red;
+    li {
+      text-align: center;
+      list-style: none;
+      border: 1px dotted lightgray;
+      padding: 20px 40px;
+      margin: 5px;
+    }
+    li:hover {
+      background-color: aqua;
+      color: red;
     }
 
   </style>
@@ -21,10 +30,10 @@
 <body>
   <nav>
     <ul class="normal">
-      <li><a href="#">짜장면</a></li>
-      <li><a href="#">짬뽕</a></li>
-      <li><a href="#">탕수육</a></li>
-      <li><a href="#">볶음밥</a></li>
+      <a href="#"><li>짜장면</li></a>
+      <a href="#"><li>짬뽕</li></a>
+      <a href="#"><li>탕수육</li></a>
+      <a href="#"><li>볶음밥</li></a>
     </ul>
   </nav>
 </body>

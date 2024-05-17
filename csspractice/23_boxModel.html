@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스 모델</title>
+  <style>
+    * {
+      margin: 0;
+      padding : 0;
+    }
+
+    div {
+      box-sizing: border-box;
+      width: 300px;
+      border: 15px solid green;
+      padding: 50px;
+      margin: 20px;
+      text-align: center;
+      box-shadow: 10px 10px 5px #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>아래의 div 크기를 계산해 보자</h1>
+  <div>CSS Box Model</div>
+  컨텐츠 + padding + border + margin 영역의 합
+</body>
+</html>

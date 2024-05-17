@@ -31,56 +31,49 @@
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/images/china.png">china.png</a>
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/images/fileicon.png">fileicon.png</a>
 │  │  └─ <a href="https://yhs99.github.io/goott/csspractice/images/japan.png">japan.png</a>
-│  └─ practicenth.html
+│  └─ <a href="https://yhs99.github.io/goott/csspractice/practicenth">practicenth.html</a>
 ├─ htmlpractice
 │  ├─ 1주차
 │  │  └─ day_1
-│  │     ├─ 1_helloHtml.html
-│  │     ├─ 1일차 이론정리.md
-│  │     ├─ 2_htmlCssJs.html
-│  │     ├─ http요청과 응답.png
-│  │     └─ 고양이.jpg
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/1주차/day_1/1_helloHtml">1_helloHtml.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/1주차/day_1/1일차%20이론정리.md">1일차 이론정리.md</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/1주차/day_1/2_htmlCssJs">2_htmlCssJs.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/1주차/day_1/http요청과%20응답.png">http요청과 응답.png</a>
+│  │     └─ <a href="https://yhs99.github.io/goott/htmlpractice/1주차/day_1/고양이.jpg">고양이.jpg</a>
 │  ├─ 2주차
 │  │  ├─ day_1
-│  │  │  ├─ 1_basicTags.html
-│  │  │  ├─ 2_textTags.html
-│  │  │  ├─ 2일차정리.md
-│  │  │  ├─ 3-1_listTags.html
-│  │  │  ├─ 3_listTags.html
-│  │  │  ├─ 4_tableTag.html
-│  │  │  ├─ 5_hyperlinkTag.html
-│  │  │  ├─ 6_pathMethod.html
-│  │  │  ├─ HTML요소.png
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/1_basicTags">1_basicTags.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/2_textTags">2_textTags.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/2일차정리.md">2일차정리.md</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/3-1_listTags">3-1_listTags.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/3_listTags">3_listTags.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/4_tableTag">4_tableTag.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/5_hyperlinkTag">5_hyperlinkTag.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/6_pathMethod">6_pathMethod.html</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/HTML요소.png">HTML요소.png</a>
 │  │  │  ├─ img
 │  │  │  │  ├─ img-a
-│  │  │  │  │  └─ 고양이.jpg
-│  │  │  │  ├─ rm.jpg
-│  │  │  │  └─ 고양이.jpg
-│  │  │  ├─ practice.html
-│  │  │  └─ 고양이.jpg
+│  │  │  │  │  └─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/img/img-a/고양이.jpg">고양이.jpg</a>
+│  │  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/img/img-a/rm.jpg">rm.jpg</a>
+│  │  │  │  └─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/img/고양이.jpg">고양이.jpg</a>
+│  │  │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/practice">practice.html</a>
+│  │  │  └─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_1/고양이.jpg">고양이.jpg</a>
 │  │  └─ day_2
-│  │     ├─ 1_iframe.html
-│  │     ├─ 2_multimedia.html
-│  │     ├─ 3_semanticTags.html
-│  │     ├─ 3일차 정리.md
-│  │     ├─ 4_formTag.html
-│  │     ├─ 5_variousInputTags.html
-│  │     ├─ CSS정리.md
-│  │     ├─ agreement.txt
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/1_iframe">1_iframe.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/2_multimedia">2_multimedia.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/3_semanticTags">3_semanticTags.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/3일차%20정리.md">3일차 정리.md</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/4_formTag">4_formTag.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/5_variousInputTags">5_variousInputTags.html</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/CSS정리.md">CSS정리.md</a>
+│  │     ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/agreement.txt">agreement.txt</a>
 │  │     ├─ args
-│  │     │  ├─ css_syntax.png
-│  │     │  ├─ manual.pdf
-│  │     │  ├─ music.mp3
-│  │     │  └─ video.mp4
-│  │     └─ practice.html
+│  │     │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/args/css_syntax.png">css_syntax.png</a>
+│  │     │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/args/manual.pdf">manual.pdf</a>
+│  │     │  ├─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/args/music.mp3">music.mp3</a>
+│  │     │  └─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/args/video.mp4">video.mp4</a>
+│  │     └─ <a href="https://yhs99.github.io/goott/htmlpractice/2주차/day_2/practice.html">practice.html</a>
 │  └─ images
-│     └─ cat.jpg
-└─ index.html
-
-import { assign, map } from '<a href="https://www.npmjs.com/package/lodash" title="Lodash on npm">lodash</a>';
-
-<a href="https://lodash.com/docs#assign" title="assign documentation">assign</a>({ 'a': 1 }, { 'b': 2 }, { 'c': 3 });
-// → { 'a': 1, 'b': 2, 'c': 3 } 
-<a href="https://lodash.com/docs#map" title="map documentation">map</a>([1, 2, 3], function(n) { return n * 3; });
-// → [3, 6, 9] 
+│     └─ <a href="https://yhs99.github.io/goott/htmlpractice/images/cat.jpg">cat.jpg</a>
+└─ <a href="https://yhs99.github.io/goott/">index.html</a>
 </pre>
