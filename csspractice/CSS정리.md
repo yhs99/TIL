@@ -462,7 +462,38 @@ a[href] {
 
 
 
-# 텍스트 관련 스타일
+# 5. 텍스트 관련 스타일
+글자 모양을 결정하는 스타일 속성
+1) font-family: 글꼴 변경
+font-family: 글꼴이름1, 글꼴이름2, 글꼴이름3...
+
+2) font-size: 글꼴 사이즈 
+    - 절대단위: px 픽셀, pt 포인트
+    - 상대단위: 
+      - %: (백분율)
+      - em: (요소의 글꼴 크기 - 부모 요소에서 지정한 글꼴의 대문자 의 너비를 기준으로(1em)한 후 비율값을 지정)
+      - rem: root(부모)에서 지정한 크기를 기준으로 (1rem)한 후 비율 값을 지정
+      - vw: 뷰포트 가포 너비의 백분율
+      - vh: 뷰포트 세로 너비의 백분율 
+
+  3) font-style: normal | italic | olbique 
+  4) font-weight: normal | bold | bolder | 100 200 ~ 900 (글자의 굵기)
+  5) color: 색상명 | #16진수(#000000 ~ #ffffff) | rgba(r,g,b, alpha(불투명도))<br>
+  16진수를 가장 보편적으로 사용 (색상추출: ColorZilla 확장프로그램)
+  6) text-align(가로 정렬): left | right | center | justify(양쪽정렬)
+  7) line-height(줄간격): 2.5(글자크기의 2.5배 줄간격) <br>
+  -> 세로 중앙 정렬에 이용 : 글자를 둘러싸고 있는 영역의 height를 line-height값과 똑같이 지정
+  8) text-decoration: 텍스트의 줄을 표시하거나 없애준다.
+  <br> none | underline | overline | line-through(가운데줄)
+  9) text-shadow: 텍스트의 그림자 효과<br>
+  가로px, 세로px, 번짐정도, 색상
+  10) text-transform: 영문자를 표기할 때 대문자 또는 소문자를 표시한다.<br>
+  capitalize | uppercase | lowercase
+  11) letter-spacing(글자 간격), word-spacing(단어 간격)
+<br>
+
+# 6) 목록 태그와 함께 사용하는 스타일 속성
+list-style-type : none; 리스트의 bullet 제거
 
 ### Box Model
 : 하타의 태그(요소)가 차지하는 크기는 아래 그림과 같이 컨텐츠 영역 + padding 영역 + Border + Margin 영역의 합으로 그려진다. 
@@ -497,3 +528,60 @@ min-width: 400px;
 ## 연습문제)
 이력서 양식을 테이블을 이용해서 만들어보세요 (월요일 9시 30분까지)
 <a href="https://yhs99.github.io/goott/csspractice/homework">숙제 링크</a>
+
+# 7. postion
+: 요소를 화면의 원하는 곳에 배치하려 할때 요소의 <strong>기준위치를 잡아주는</strong> 속성
+
+  1) static: 문서의 흐름에 맞춰 배치(기본 값)
+  2) relative: 자기 위치를 기준으로 배치
+  3) absolute: relative를 기준으로 한 상위 요소를 기준으로 위치를 지정해 배치.
+  4) fixed: 브라우저 창을 기준으로 지정해 배치.
+  5) sticky
+
+# 8. z-index
+요소의 쌓이는 순서(stack) <br>
+:어떤 요소가 사용자가 보는 방향에 더 가깝게 쌓이는지 결정
+  1.  요소에 postion 속성의 값이 있는 경우 위에 쌓인다. (postion: static 제외)
+  2. 1번 조건이 같으면, z-index 속성으 숫자가 높을수록 위에 배치된다.
+  3. 1번과 2번 조건이 같으면, html의 가장 마지막에 작성한 요소가 위로 표시된다.
+
+
+# 9. overflow 
+<details>
+<summary>35_overflow.html</summary>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow 속성</title>
+  <style>
+    div.overflow {
+      width: 200px;
+      height: 200px;
+      background-color: cadetblue;
+      overflow: auto;
+      text-overflow: ellipsis;
+    }
+    div.ellipse {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <div class="overflow">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci recusandae nihil excepturi obcaecati ut quo consectetur, debitis ab. Doloribus minima quibusdam esse natus obcaecati asperiores eos veniam ad tempora.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, iure tempore quidem esse praesentium culpa vel maxime, repellendus veritatis, qui explicabo numquam. Maxime non optio maiores dolorem, sequi sunt accusamus?
+  </div>
+  <div class="ellipse">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque voluptatibus perspiciatis accusantium quidem ipsum dolores doloribus totam tempora atque dolore dolor molestiae impedit vel, delectus, iusto accusamus ipsa cum alias.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quisquam aspernatur. Nihil enim dolore id? Ipsum itaque, praesentium blanditiis vero nulla iusto, distinctio culpa sit, molestias delectus voluptatum harum quam!
+  </div>
+</body>
+</html>
+</details>
