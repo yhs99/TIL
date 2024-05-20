@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>특정 항목만 정렬방법 지정</title>
+  <style>
+    .container {
+      width: 450px;
+      height: 150px;
+      background-color: darkgray;
+      display: flex;
+      align-items: center;
+    }
+
+    .box {
+      background-color: darkcyan;
+      padding: 5px 45px;
+      margin: 5px;
+    }
+
+    #box1 {
+      /*
+        부모 요소가 아닌 자식 요소에서 정렬한다.
+      */
+      align-self: flex-start;
+    }
+
+    #box3 {
+      align-self: stretch;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" id="box1">1</div>
+    <div class="box">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box">4</div>
+  </div>
+</body>
+</html>

@@ -39,6 +39,11 @@
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex02">36_flex02.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex03">36_flex03.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex04">36_flex04.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex05">36_flex05.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex06">36_flex06.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flex07">36_flex07.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flexEx">36_flexEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/36_flexEx1">36_flexEx1.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/4_idSelector">4_idSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/5_classSelector">5_classSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/6_groupSelector">6_groupSelector.html</a>
@@ -46,6 +51,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/8_descendantSelector">8_descendantSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/9_childSelector">9_childSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/CSS정리">CSS정리.md</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/flexExercise">flexExercise.html</a>
 │  ├─ css
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/css/main.css">main.css</a>
 │  │  └─ <a href="https://yhs99.github.io/goott/csspractice/css/mycss.css">mycss.css</a>
