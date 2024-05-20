@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poistion + Background image</title>
+  <style>
+    #contents {
+      background: url("images/background.jpg") no-repeat;
+      width: 700px;
+      height: 400px;
+      background-size: cover;
+      position: relative; /*부모 지정*/
+    }
+
+    h1 {
+      color: yellow;
+      position: absolute; /*#contents의 postion:relative를 기준으로 포지션이 정해짐*/
+      top: 70px;
+      left: 30px;
+    }
+
+    h2 {
+      color: white;
+      position: absolute; /*#contents의 postion:relative를 기준으로 포지션이 정해짐*/
+      top: 110px;
+      left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="contents">
+    <h1>가정의 달</h1>
+    <h2>5월의 여행지</h2>
+  </div>
+</body>
+</html>
