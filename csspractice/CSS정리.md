@@ -586,3 +586,16 @@ min-width: 400px;
 </html>
 </details>
 
+# mediaquery
+: 반응형 웹 페이지를 만들 때 사용한다.
+```css 
+@media screen and (max-width: ~px ) {
+  body {
+    ...
+  }
+}
+```
+# Bootstrap
+``` 
+<head> 태그안에 부트스트랩 파일 코드를 추가하여 사용해야한다.
+```

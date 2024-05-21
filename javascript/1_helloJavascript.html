@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javacsript에서 화면에 출력하는 4가지 방법!</title>
+  <script>
+    window.onload = () => {
+      document.getElementById("yogi").innerHTML="<b>이름은 홍길동</b>";
+    }
+  </script>
+</head>
+<body>
+  <div>
+    1.document.write()를 이용한다.
+  </div>
+  <script>
+    document.write("<h1>Hello, Javacript!</h1>");
+  </script>
+  <div>
+    2. window.alert()를 이용한다.
+  </div>
+  <script>
+    //window.alert('1');
+  </script>
+  <div>
+    3. console.log()를 이용한다. 디버깅 debugging (오류를 잡기 위해서 주로 사용함.)
+  </div>
+  <script>
+    console.log("Hello, Javascript");
+  </script>
+  <div>
+    4. 태그에 접근하여 출력한다.
+  </div>
+  <div id="yogi"></div>
+</body>
+</html>
