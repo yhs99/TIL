@@ -111,4 +111,11 @@
 │  └─ images
 │     └─ <a href="https://yhs99.github.io/goott/htmlpractice/images/cat.jpg">cat.jpg</a>
 └─ <a href="https://yhs99.github.io/goott/">index.html</a>
+├─ javascript
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/1_helloJavascript">1_helloJavascript.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/2_variableConst">2_variableConst.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/3_dataType">3_dataType.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/4_example">4_example.html</a>
+│  └─ <a href="https://yhs99.github.io/goott/javascript/javascript정리">javascript정리.md</a>
+└─ readme.md
 </pre>
