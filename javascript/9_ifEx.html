@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>if문 연습</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script>
+    // html, css, javascript 세 과목의 점수를 입력받아 평균을 구하고,
+    // 평균이 60점 이상이고 과목당 40점 이상이어야 합격
+    // 40점 미만 과목은 불합격.
+    // 합격 여부를 출력하세요.
+    let result="";
+    let html, css, javascript, total, average;
+
+    html = 81, css = 39, javascript = 81;
+    total = html + css + javascript;
+    average = (total/3).toFixed(2);
+
+    if(average >= 60) {
+      html >= 40 && css >= 40 && javascript >= 40 ? result="합격입니다." : result="불합격입니다.";
+    } else {
+      result="불합격입니다.";
+    }
+
+    document.write(`
+    <table class="table table-striped text-center align-middle">
+      <tr>
+        <td>html</td>
+        <td>css</td>
+        <td>javascript</td>
+        <td>총점</td>
+        <td>평균</td>
+        <td>합격여부</td>
+      </tr>
+      <tr>
+        <td>${html}</td>
+        <td>${css}</td>
+        <td>${javascript}</td>
+        <td>${total}</td>
+        <td>${average}</td>
+        <td>${result}</td>
+      </tr>
+    </table>
+    `);
+  </script>
+</head>
+<body class="container">
+  
+</body>
+</html>

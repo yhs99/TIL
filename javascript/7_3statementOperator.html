@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3항 연산자</title>
+  <script>
+    let a = 10;
+    // 3항 연산자
+    // (조건식) ? true : false
+    console.log(a > 5 ? "크다" : "작다");
+
+    let result=""; // 문자열로 초기화
+    result = a % 2 == 0 ? "짝수" : "홀수";
+    console.log(result);
+
+    if(a % 2 == 0) {
+      result="짝수"
+    }else {
+      result="홀수"
+    }
+
+    console.log(result);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

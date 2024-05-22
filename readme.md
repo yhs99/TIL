@@ -53,7 +53,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/7_basicCombinator">7_basicCombinator.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/8_descendantSelector">8_descendantSelector.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/9_childSelector">9_childSelector.html</a>
-│  ├─ <a href="https://yhs99.github.io/goott/csspractice/CSS정리">CSS정리.md</a>
+│  ├─ <a href="https://yhs99.github.io/goott/csspractice/readme">CSS정리.md</a>
 │  ├─ <a href="https://yhs99.github.io/goott/csspractice/flexExercise">flexExercise.html</a>
 │  ├─ css
 │  │  ├─ <a href="https://yhs99.github.io/goott/csspractice/css/main.css">main.css</a>
@@ -116,6 +116,11 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/2_variableConst">2_variableConst.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/3_dataType">3_dataType.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/4_example">4_example.html</a>
-│  └─ <a href="https://yhs99.github.io/goott/javascript/javascript정리">javascript정리.md</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/5_string">5_string.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/6_operator">6_operator.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/7_3statementOperator">7_3statementOperator.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/8_ifStatement">8_ifStatement.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/9_ifEx">9_ifEx.html</a>
+│  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

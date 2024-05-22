@@ -16,6 +16,31 @@
     let radius = 5**2; // 5의 제곱
     let circleArea = radius*Math.PI;
     document.write("<div>문제2 : "+"(&pi;r<sup>2</sup>) " + circleArea +"cm<sup>2</sup></div>");
+    // 문제3)
+    // num1 이라는 변수에 3이 대입되어 있고, num2 라는 변수에 5라는 값이 있는데,
+    // 두 변수의 값을 바꾸어 저장되도록 하고, 화면에 출력하세요.
+    let num1 = 3, 
+        num2 = 5,
+        temp = 0;
+    document.write(`<div> 초기값 : num1 = ${num1}, num2 = ${num2}</div>`);
+    
+    // 1) num1의 값을 temp에 복사
+    temp = num1;
+    // 2) num2의 값을 num1에 복사
+    num1 = num2;
+    // 3) temp의 값을 num2에 복사
+    num2 = temp;
+    document.write(`<div> 바꾼값 : num1 = ${num1}, num2 = ${num2}</div>`);
+
+    // 문제 4)
+    // 밑변과 높이를 유저에게 입력 받아, 삼각형의 넓이를 구해 출력하는 프로그램을 만드세요.
+    let base = window.prompt("밑변을 입력하세요");
+    let triangleHeight = window.prompt("높이를 입력하세요");
+    let triangleArea = (base * triangleHeight) / 2;
+    document.write(`<div>삼각형의 넓이는 ${triangleArea}cm<sup>2</sup></div>`);
+
+    // 유저가 문자를 입력한 경우, 넓이를 계산할 수 없으므로,
+    // 넓이 값은 NaN (Not a Number)를 출력하게된다.
   </script>
 </head>
 <body>
