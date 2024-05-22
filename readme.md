@@ -121,6 +121,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/7_3statementOperator">7_3statementOperator.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/8_ifStatement">8_ifStatement.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/9_ifEx">9_ifEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/10_ifEx2">10_ifEx2.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>
