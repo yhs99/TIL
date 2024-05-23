@@ -122,6 +122,9 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/8_ifStatement">8_ifStatement.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/9_ifEx">9_ifEx.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/10_ifEx2">10_ifEx2.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/11_isNumber">11_isNumber.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/12_switchCase">12_switchCase.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/13_rockcissorpaper">13_rockcissorpaper.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>
