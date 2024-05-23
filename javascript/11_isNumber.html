@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>숫자 판별</title>
+  <script>
+    // isNan() : return boolean
+    // is Not a Number? 
+    console.log(isNaN('k')); // true
+    console.log(isNaN(123)); // false
+    console.log(isNaN('123')); // false
+    console.log(isNaN('123abc')); // true
+
+    console.log(Number.isNaN(null)); //false
+    console.log(Number.isNaN(NaN)); //false
+    console.log(isNaN("")); // false
+    console.log(isNaN(null)); // false
+
+    console.log('-----')
+    console.log(isInfinity(123)); // false
+    console.log(isInfinity(NaN)); // false
+    console.log(isInfinity(-Infinity)); // false
+    console.log(isInfinity(0)); // true
+    console.log(isInfinity(2e64)); // true
+    console.log(isInfinity("0")); // false
+    console.log(isInfinity(null)); // false
+    console.log('-----')
+    
+    function isInfinity(number) {
+      return !isFinite(number)
+    }
+
+    let data = prompt("입력");
+    let result = "";
+    console.log(!null);
+    if(data && isFinite(data)) {
+      result = "숫자입니다."
+    } else {
+      result = "숫자가 아닙니다."
+    }
+
+    document.write(`${data}는 ${result}`);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

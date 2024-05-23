@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>가위바위보 게임</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <script>
+    // 컴퓨터와 유저와의 가위바위보
+    // 컴퓨터 : 랜덤하게 가위(1), 바위(2), 보(3)를 낸다.
+    // 유저 : 가위, 바위, 보를 select해서 [선택]버튼 누른다.
+    // 결과를 출력하고, 승률도 출력한다.
+
+    //변수 초기화
+    let win=0, lose=0,tie=0, winRate=0, gamePlayed=0;
+
+    function gameStart() {
+      // 변수 선언
+      let computerSelected, userSelected, flag = "";
+
+      // 가위, 바위, 보 구분
+      computerSelected = Math.floor(Math.random() * 3 + 1);
+      userSelected = document.getElementById("userSelectVal").value;
+      
+      switch(computerSelected) {
+        case 1:
+          computerSelected="scissor";
+          break;
+        case 2:
+          computerSelected="rock";
+          break;
+        case 3:
+          computerSelected="paper";
+          break;
+      }
+
+      // 승패판단
+      if(userSelected == "scissor") { // user : 가위
+        if(computerSelected == "scissor") { //comp : 가위
+          flag = tieFn(userSelected, computerSelected);
+        }else if(computerSelected == "rock") { // comp : 바위
+          flag = loseFn(userSelected, computerSelected);
+        }else if(computerSelected == "paper") { // comp : 보
+          flag = winFn(userSelected, computerSelected);
+        }
+      } else if(userSelected == "rock") { // user : 바위
+        if(computerSelected == "scissor") { // comp : 가위
+          flag = winFn(userSelected, computerSelected);
+        }else if(computerSelected == "rock") { // comp : 바위
+          flag = tieFn(userSelected, computerSelected);
+        }else if(computerSelected == "paper") { // comp : 보
+          flag = loseFn(userSelected, computerSelected);
+        }
+      }else if(userSelected == "paper") { // user : 보
+        if(computerSelected == "scissor") { // comp : 가위
+          flag = loseFn(userSelected, computerSelected);
+        }else if(computerSelected == "rock") { // comp : 바위
+          flag = winFn(userSelected, computerSelected);
+        }else if(computerSelected == "paper") { // comp : 보
+          flag = tieFn(userSelected, computerSelected);
+        }
+      }
+
+      //승률계산
+      gamePlayed = win+lose+tie;
+      winRate = ((win / (win+lose+tie)) * 100).toFixed(2);
+      //승률출력
+      document.getElementById("gameResult").innerText = flag
+      document.getElementById("winRate").innerHTML = `<span>승:${win}, 패:${lose}, 무${tie}, 승률:${winRate}% , 판수: ${gamePlayed}</span>`;
+    }
+
+    // 승패 판단 함수
+    function winFn(user, computer) {
+      document.getElementById("user").innerHTML=`<img src='./images/${user}.png'>`
+      document.getElementById("computer").innerHTML=`<img src='./images/${computer}.png'>`
+      win++;
+      return "이겼어요";
+    }
+
+    function loseFn(user, computer) {
+      document.getElementById("user").innerHTML=`<img src='./images/${user}.png'>`
+      document.getElementById("computer").innerHTML=`<img src='./images/${computer}.png'>`
+      lose++;
+      return "졌어요";
+    }
+
+    function tieFn(user, computer) {
+      document.getElementById("user").innerHTML=`<img src='./images/${user}.png'>`
+      document.getElementById("computer").innerHTML=`<img src='./images/${computer}.png'>`
+      tie++;
+      return "비겼어요";
+    }
+  </script>
+</head>
+<body class="text-center">
+  <h1>가위, 바위, 보!</h1>
+  <div class="userInput"> 
+      <select id="userSelectVal">
+        <option value="scissor">가위</option>
+        <option value="rock">바위</option>
+        <option value="paper">보</option>
+      </select>
+      <input type="button" value="선택" onclick="gameStart();">
+  </div>
+  <div class="container">
+    <table class="col-12 text-center" border="1">
+      <tr>
+        <td>USER</td>
+        <td>COMPUTER</td>
+      </tr>
+      <tr>
+        <td id="user"></td>
+        <td id="computer"></td>
+      </tr>
+    </table>
+    <div id="gameResult" class="text-center h3"></div>
+    <div id="winRate" class="text-center h1"></div>
+  </div>
+</body>
+</html>

@@ -12,33 +12,45 @@
     // 1. 짜장면, 2: 김치찌개, ~ 7 :
     function getRandomFoods() {
       let randNum = 0;
-      let imageElement = document.getElementById("foodImg");
-      let foodName = document.getElementById("foodName");
-      
-      randNum = Math.floor(Math.random() * (Math.floor(7) - Math.ceil(1) + 1) + Math.ceil(1));
+      let imageElement = "";
+      let foodName = "";
 
-      if(randNum == 1) {
-        imageElement.src = "./images/curry.jpg";  
-        foodName.innerHTML = "카레"
-      } else if(randNum == 2) {
-        imageElement.src = "./images/gatsu.jpg";
-        foodName.innerHTML = "돈까스"
-      } else if(randNum == 3) {
-        imageElement.src = "./images/jajang.jpg";
-        foodName.innerHTML = "짜장면"
-      }else if(randNum== 4) {
-        imageElement.src = "./images/jjambbong.jpg";
-        foodName.innerHTML = "짬뽕"
-      }else if(randNum == 5) {
-        imageElement.src = "./images/kimchi.jpg";
-        foodName.innerHTML = "김치찌개"
-      }else if(randNum == 6) {
-        imageElement.src = "./images/mara.jpg";
-        foodName.innerHTML = "마라탕"
-      }else if(randNum == 7) {
-        imageElement.src = "./images/tteokbokki.jpg";
-        foodName.innerHTML = "떡볶이"
-      };
+      randNum = Math.floor(Math.random() * 7 + 1); // 1~8까지의 난수생성
+      console.log(randNum);
+
+      switch(randNum) {
+        case 1 :
+          imageElement = "./images/curry.jpg";
+          foodName = "카레";
+          break;
+        case 2 :
+          imageElement = "./images/gatsu.jpg";
+          foodName = "돈까스";
+          break;
+        case 3 :
+          imageElement = "./images/jajang.jpg";
+          foodName = "짜장면";
+          break;
+        case 4 :
+          imageElement = "./images/jjambbong.jpg";
+          foodName = "짬뽕";
+          break;
+        case 5 :
+          imageElement = "./images/kimchi.jpg";
+          foodName = "김치찌개";
+          break;
+        case 6 :
+          imageElement = "./images/mara.jpg";
+          foodName = "마라탕";
+          break;
+        case 7 :
+          imageElement = "./images/tteokbokki.jpg";
+          foodName = "떡볶이";
+          break;
+      }
+      
+      document.getElementById("foodImg").src = imageElement;
+      document.getElementById("foodName").innerHTML = foodName;
 
     };
     
