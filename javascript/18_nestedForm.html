@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    for(let i=0; i<3; i++) {
+      //console.log("i = " + i);
+      for(let j=0; j<2; j++) {
+        console.log("i = " + i + ", j = " + j);
+      }
+    }
+
+    for(let i = 0; i < 4; i++) {
+      document.write("☆ ");
+      for(let j = 0; j< 4; j++) {
+        document.write("★ ");
+      }
+    }
+
+    // 4행 3열 테이블 만들어보자. 
+    let element = `<table border=1>`
+    let add=1;
+    for(let i=0; i<4; i++) {
+      element+= `<tr>`;
+      for(let j=0; j<3; j++) {
+        element+= `<td>
+                  ${add++}
+                  </td>`
+      }
+      element+=`</tr>`
+    }
+    element += `</table>`
+    document.write(element);
+    document.write('<hr>')
+    document.write("직사각형 별 (3x4)<br>");
+    for(let i=0; i<3; i++) {
+      for(let j=0; j<4; j++) {
+        document.write("★ ")
+      }
+      document.write("<br>");
+    }
+    document.write("<hr>");
+
+    document.write("직각삼각형 별<br>");
+    for(let i=0; i<5; i++) {
+      document.write("* ");
+      for(let j=0; j<i; j++) {
+        document.write("* ");
+      }
+      document.write("<br>");
+    }
+
+    document.write("<hr>");
+    for(let i=0; i<5; i++) {
+      document.write("* ");
+      for(let j=4; j>i; j--) {
+        document.write("* ");
+      }
+      document.write("<br>");
+    }
+
+    document.write("<hr>");
+    let doc="피라미드 별 <br>";
+    for(let i=0; i<6; i++) {
+      for(let j=0; j<(5-i); j++) {
+        doc+="&nbsp;";
+      }
+      
+      for(let a=0; a<(2*i+1); a++) {
+          doc+="*";
+      }
+      doc+="<br>";
+    }
+    document.write(doc);
+    
+    
+    document.write("<hr>");
+
+    doc="마름모 별 <br>";
+    for(let i=0; i<7; i++) {
+      for(let j=0; j<(5-i); j++) {
+        doc+="&nbsp;";
+      }
+      
+      for(let a=0; a<(2*i+1); a++) {
+          doc+="*";
+      }
+      doc+="<br>";
+    }
+    for(let i=5; i>=0; i--) {
+      for(let j=0; j<(5-i); j++) {
+        doc+="&nbsp;";
+      }
+      
+      for(let a=0; a<(2*i+1); a++) {
+          doc+="*";
+      }
+      
+      doc+="<br>";
+    }
+    document.write(doc);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

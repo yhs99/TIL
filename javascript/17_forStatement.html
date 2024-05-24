@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 : for</title>
+  <script>
+    // ul 태그 안에 li탵그를 5회 나오도록, li태그 안에 1, 2, 3, 4, 5가 들어가도록 만드세요.;
+    let outputList = "<ul>";
+    for(let i = 1; i< 6; i++) {
+      outputList += "<li>"+i+"</li>"
+    }
+    outputList+="</ul>";
+    document.write(outputList);
+
+    // 테이블 4행 3열 td태그 안에 0부터 1씩 증가하는 숫자가 들어가도록 하세요.
+    // for문 한번만 사용
+    let j=0;
+    outputList=`<table>`
+    for(let i=0; i<5; i++) {
+        outputList+=`<tr>
+                    <td>${j++}</td>
+                    <td>${j++}</td>
+                    <td>${j++}</td>
+                    </tr>`
+    }
+    outputList+=`</table>`
+    
+    document.write(outputList);
+    outputList=`<table>`
+    for(let i=0; i<5; i++) {
+        outputList+=`<tr>
+                    <td>${i * 3}</td>
+                    <td>${i * 3 + 1}</td>
+                    <td>${i * 3 + 2}</td>
+                    </tr>`
+    }
+    outputList+=`</table>`
+    document.write(outputList);
+    document.write("<hr>");
+
+
+    // 1부터 100까지 합을 구하세요.
+    let sum = 0;
+    for(let i=1; i<=100; i++) {
+      sum += i;
+    }
+    document.write("1~100까지 합은" + sum + "입니다.");
+    document.write("<hr>");
+
+    let odd=0;
+    let even=0;
+    for(let i=0; i<=100; i++) {
+      switch (i%2) {
+        case 0:
+          odd+=i;
+          break;
+        default:
+          even+=i;
+      }
+    }
+    
+    document.write("1~100까지 짝수합은 " + odd + "입니다.");
+    document.write("1~100까지 홀수합은 " + even + "입니다.");
+    document.write("<hr>");
+
+    // 사용자에게 단을 입력받고 해당하는 단의 구구단을 출력하시오
+    let user = prompt("단수");
+    document.write(`${user}단 구구단<br>`)
+    for (let i=1; i<=9; i++) {
+      document.write(`${user}x${i} = ${user*i} <br>`);
+    }
+  </script>
+</head>
+<body>
+</body>
+</html>

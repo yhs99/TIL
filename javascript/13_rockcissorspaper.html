@@ -78,7 +78,7 @@
 
       //승률계산
       gamePlayed = win+lose+tie;
-      winRate = ((win / (win+lose+tie)) * 100).toFixed(2);
+      winRate = Math.round(((win / (gamePlayed)) * 100) * 10) / 10;
       //승률출력
       document.getElementById("gameResult").innerText = flag
       document.getElementById("winRate").innerHTML = `<span>승:${win}, 패:${lose}, 무${tie}, 승률:${winRate}% , 판수: ${gamePlayed}</span>`;

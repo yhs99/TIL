@@ -125,6 +125,11 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/11_isNumber">11_isNumber.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/12_switchCase">12_switchCase.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/13_rockcissorpaper">13_rockcissorpaper.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/14_localGlobal">14_localGlobal.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/15_bmiEx">15_bmiEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/16_evenOddEx">16_evenOddEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/17_forStatement">17_forStatement.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/18_nestedForm">18_nestedForm.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>
