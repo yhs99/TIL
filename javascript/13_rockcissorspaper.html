@@ -36,31 +36,45 @@
       }
 
       // 승패판단
-      if(userSelected == "scissor") { // user : 가위
-        if(computerSelected == "scissor") { //comp : 가위
+      // if(userSelected == "scissor") { // user : 가위
+      //   if(computerSelected == "scissor") { //comp : 가위
+      //     flag = tieFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "rock") { // comp : 바위
+      //     flag = loseFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "paper") { // comp : 보
+      //     flag = winFn(userSelected, computerSelected);
+      //   }
+      // } else if(userSelected == "rock") { // user : 바위
+      //   if(computerSelected == "scissor") { // comp : 가위
+      //     flag = winFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "rock") { // comp : 바위
+      //     flag = tieFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "paper") { // comp : 보
+      //     flag = loseFn(userSelected, computerSelected);
+      //   }
+      // }else if(userSelected == "paper") { // user : 보
+      //   if(computerSelected == "scissor") { // comp : 가위
+      //     flag = loseFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "rock") { // comp : 바위
+      //     flag = winFn(userSelected, computerSelected);
+      //   }else if(computerSelected == "paper") { // comp : 보
+      //     flag = tieFn(userSelected, computerSelected);
+      //   }
+
+        if(userSelected == computerSelected) {
           flag = tieFn(userSelected, computerSelected);
-        }else if(computerSelected == "rock") { // comp : 바위
-          flag = loseFn(userSelected, computerSelected);
-        }else if(computerSelected == "paper") { // comp : 보
-          flag = winFn(userSelected, computerSelected);
+        }else if((userSelected == "scissor" && computerSelected == "paper") ||
+          (userSelected == "rock" && computerSelected == "scissor")   ||
+          (userSelected == "paper" && computerSelected == "rock")) {
+          console.log(userSelected, computerSelected);
+            flag = winFn(userSelected, computerSelected);
+        }else if((userSelected == "scissor" && computerSelected == "rock") ||
+                (userSelected == "rock" && computerSelected == "paper") ||
+                (userSelected == "paper" && computerSelected == "scissor")) {
+          console.log(userSelected, computerSelected);
+          flag=loseFn(userSelected, computerSelected);
         }
-      } else if(userSelected == "rock") { // user : 바위
-        if(computerSelected == "scissor") { // comp : 가위
-          flag = winFn(userSelected, computerSelected);
-        }else if(computerSelected == "rock") { // comp : 바위
-          flag = tieFn(userSelected, computerSelected);
-        }else if(computerSelected == "paper") { // comp : 보
-          flag = loseFn(userSelected, computerSelected);
-        }
-      }else if(userSelected == "paper") { // user : 보
-        if(computerSelected == "scissor") { // comp : 가위
-          flag = loseFn(userSelected, computerSelected);
-        }else if(computerSelected == "rock") { // comp : 바위
-          flag = winFn(userSelected, computerSelected);
-        }else if(computerSelected == "paper") { // comp : 보
-          flag = tieFn(userSelected, computerSelected);
-        }
-      }
+      
 
       //승률계산
       gamePlayed = win+lose+tie;

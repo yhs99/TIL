@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전역변수 vs 지역변수</title>
+  <script>
+    //전역변수
+    let data = 3; 
+    data = 5;
+
+    if(data > 0){
+      console.log("data ", data);
+      
+      let temp = 7; // 지역변수
+      console.log("tmp", temp);
+    }
+    console.log("tmp 중괄호 밖", temp);
+    console.log("data ", data);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
