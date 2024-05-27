@@ -130,6 +130,8 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/16_evenOddEx">16_evenOddEx.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/17_forStatement">17_forStatement.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/18_nestedForm">18_nestedForm.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/19_gugudan_yhs">19_gugudan_yhs.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/20_whileStatement">20_whileStatement.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

@@ -31,6 +31,9 @@
       }
       element+=`</tr>`
     }
+
+    
+
     element += `</table>`
     document.write(element);
     document.write('<hr>')
@@ -43,6 +46,17 @@
     }
     document.write("<hr>");
 
+    let docs="";
+    for(let i=0; i<5; i++) {
+      for(let j=5; j>i; j--) {
+        docs+= "&nbsp;"
+      }
+      for(let a=0; a<(i * 2 + 1); a++) {
+        docs+= "*"
+      }
+      docs+="<br>"
+    }
+    document.write(docs);
     document.write("직각삼각형 별<br>");
     for(let i=0; i<5; i++) {
       document.write("* ");
@@ -100,6 +114,7 @@
       
       doc+="<br>";
     }
+
     document.write(doc);
   </script>
 </head>

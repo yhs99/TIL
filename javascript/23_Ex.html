@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반복문 연습문제</title>
+  <script>
+    // 문제1) 1부터 9까지의 합을 구하되,
+    // 3의 배수를 제외한 합을 구하세요.
+    let sum1=0;
+    let excludeNum = "3의 배수 ";
+    for(let i=1; i<10; i++) {
+      if(i%3==0) {
+        excludeNum+= i + ", ";
+        continue;
+      }
+      sum1+=i;
+    }
+    console.log(`${excludeNum} 를 제외한 합은 ${sum1} 입니다.`);
+
+    //문제2) 1~100까지 짝수 합만 구하세요
+    let sum2=0;
+    for(let i=1; i<101; i++) {
+      if(i%2!=0) {
+        continue;
+      }
+      sum2+=i
+    }
+    console.log(`1~100까지 짝수의 합은 ${sum2}입니다.`);
+
+    //문제 3) 1부터 누적합을 구하되,
+    //      몇까지 더해야 누적합이 1000이 넘어가는지 출력하세요.
+    let sum3=0;
+    let i=0;
+    
+    do sum3+=++i;
+    while(sum3<1000)
+
+    console.log(`1부터 누적합을 구할때 ${i} 번째 수를 더하면 1000이 넘어갑니다.`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

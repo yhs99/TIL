@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>성적표 V3</title>
+  <script>
+    
+    window.onload = () => {
+      // 사용자에게 이름, 국어, 영어, 수학 점수를 입력받아 총점, 평균을 구하고
+      // 학점을 구해 테이블로 출력하는 프로그램을 작성
+      // 1차원 배열을 이용하여 만들것
+      let student = [];
+      let sum=0;
+      let avg=0;
+      student.push(prompt("이름을 입력하세요"));
+      student.push(prompt("국어 점수를 입력하세요"));
+      student.push(prompt("영어 점수를 입력하세요"));
+      student.push(prompt("수학 점수를 입력하세요"));
+
+      for(let i=1; i<student.length; i++) {
+        sum+=parseInt(student[i]);
+      }
+      student.push(sum);//총점
+
+      avg=(sum/3).toFixed(2);
+      student.push(avg); //평균
+
+      switch(Math.floor(avg/10)) { //학점
+        case 10:
+        case 9:
+          student.push("A");
+          break;
+        case 8:
+          student.push("B");
+          break;
+        case 7:
+          student.push("C");
+          break;
+        case 6:
+          student.push("D");
+          break;
+        case 5:
+          student.push("E");
+          break;
+        default:
+          student.push("F");
+
+      }
+
+
+      let docs=`
+      <h1>성적표 v3</h1>
+        <table border=1>
+          <tr>
+            <td>이름</td>
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+            <td>총점</td>
+            <td>평균</td> 
+            <td>학점</td>  
+          </tr>  
+          <tr>`
+      for(let i=0; i<student.length; i++) {
+        docs+=`<td>${student[i]}</td>`
+      }
+      docs+=`
+          </tr>  
+        </table>
+      `;
+      
+      document.getElementById("score").innerHTML = docs;
+    }
+  </script>
+</head>
+<body>
+  <div id="score"></div>
+</body>
+</html>
