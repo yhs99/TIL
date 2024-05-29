@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오름차순</title>
+  <style>
+  </style>
+  <script>
+    // 1~100까지 수의 랜덤한 수 10개를 배열에 넣어두고,
+    // 오름차순으로 정렬하고
+    // 정렬 전과, 정렬 후의 배열을 각각 추력하세요.
+    let arr = new Array(10);
+    for(let i=0; i<arr.length; i++) {
+      arr[i] = Math.floor(Math.random()*100+1);
+    }
+    
+    document.write("<h2>정렬 전 : " + arr.join(' > ').toLocaleString() + " <br></h2>");
+
+    for(let i=0; i<arr.length; i++) {
+      for(let j=0; j<arr.length; j++) {
+        if(arr[j] > arr[j+1]) {
+          let a = arr[j];
+          arr[j] = arr[j+1]
+          arr[j+1] = a;
+        }
+      }
+    }
+    
+    document.write("<h2>정렬 후 : " + arr.join(' > ').toLocaleString() + "</h2>");
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

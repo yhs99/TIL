@@ -8,28 +8,46 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   <script>
     // 1) 이미지 경로 배열을 만든다
-    let images = ["./images/curry.jpg", "./images/gatsu.jpg", "./images/jajang.jpg", "./images/kimchi.jpg", "./images/mara.jpg"];
+    let images = ["./images/curry.jpg", 
+                  "./images/gatsu.jpg", 
+                  "./images/jajang.jpg", 
+                  "./images/kimchi.jpg", 
+                  "./images/mara.jpg"];
     let currentImage = 0;
+    let callNext;
+
     function prev() {
+      let imgSlider = document.getElementById("imgSlider");
       if(currentImage <= 0) {
-        document.getElementById("imgSlider").src = images[images.length-1];
+        imgSlider.src = images[images.length-1];
         currentImage = images.length-1;
       }else {
-        document.getElementById("imgSlider").src = images[--currentImage];
+        imgSlider.src = images[--currentImage];
       }
     }
 
     function next() {
-      currentImage++;
-      if(currentImage > images.length-1) {
-        document.getElementById("imgSlider").src = images[0];
+      let imgSlider = document.getElementById("imgSlider");
+      if(currentImage >= images.length-1) {
+        imgSlider.src = images[0];
         currentImage = 0;
       } else {
-        document.getElementById("imgSlider").src = images[currentImage];
+        imgSlider.src = images[++currentImage];
       }
     }
 
-  </script>  
+    function auto() {
+      if(!callNext)
+        callNext = setInterval(() => {
+          next()
+        }, 1000);
+    }
+
+    function stop() {
+      clearInterval(callNext)
+      callNext = null;
+    }
+  </script>
 </head>
 <body>
   <div>
@@ -37,5 +55,7 @@
   </div>
   <input type="button" onclick="prev();" value="이전">
   <input type="button" onclick="next();" value="다음">
+  <input type="button" onclick="auto();" value="자동시작">
+  <input type="button" onclick="stop();" value="중지">
 </body>
 </html>

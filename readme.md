@@ -138,6 +138,10 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/24_array">24_array.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/25_scoreV3">25_scoreV3.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/26_simpleSlide">26_simpleSlide.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/27_loopWithArray">27_loopWithArray.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/28_simpleSearch">28_simpleSearch.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/29_maxMin">29_maxMin.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/30_simpleSort">30_simpleSort.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

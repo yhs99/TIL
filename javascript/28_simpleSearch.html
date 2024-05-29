@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>탐색 (데이터 탐색) : 순차 탐색</title>
+  <script>
+    // 1) 크기가 50인 1차원 배열을 만들고
+    // 그 방안에 1 ~ 200까지의 랜덤한 수를 넣고
+    // 테이블 (5행 10열)에 난수를 출력
+
+    let rooms = new Array(50);
+    let cnt = 0;
+    let id = 0;
+    for(let i=0; i<rooms.length; i++) {
+      rooms[i] = getRandomNum();
+    }
+    console.log(rooms);
+    let docs = `<table border=1>`
+    for(let c =0; c<5; c++) {
+      docs+= "<tr>"
+      for(let d=0; d<10; d++) {
+        docs+= `<td>${rooms[cnt++]}</td>`
+      }
+      docs+= "</tr>"
+    }
+
+    document.write(docs);
+
+    // 2) 유저에게 찾을 수를 입력받아서,
+    // 유저가 찾은 숫자가 몇번째에 있는지 출력한다.
+    let find = prompt("숫자를 입력하세요");
+    let result = "";
+    let isFound = false;
+    let tds = document.getElementsByTagName("td");
+    for(let item in rooms) {
+      if(rooms[item]==find) {
+        result += item+", ";
+        tds[item].style.backgroundColor = "red";
+        isFound = true;
+      }
+    }
+
+    if(isFound) {
+      document.write(`${find}는 ${result}에 있습니다.`);
+    }else {
+      document.write(`${find}는 없습니다.`);
+    }
+
+    function getRandomNum() {
+      let random = Math.floor(Math.random() * 200 + 1)
+      return random;
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
