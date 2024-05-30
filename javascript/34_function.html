@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <script>
+    addTwoNumbers(3,5);
+  
+    br();
+  
+    sayHello();
+  
+    br();
+  
+    sayHi(5);
+  
+    br();
+
+    document.write(addTwoNumbersWithReturnValue(100,300));
+
+
+    function addTwoNumbers(num1, num2) {
+      document.write(num1 + num2);
+    }
+
+    function sayHello() {
+      document.write("Hello");
+    }
+
+    function br() {
+      document.write("<br>");
+    }
+
+    function sayHi(times) {
+      for(let i=0; i<times; i++) {
+        document.write("Hi");
+      }
+    }
+
+    function addTwoNumbersWithReturnValue(num1, num2) {
+      return num1 + num2;
+    }
+
+    //함수 인수의 기본 값을 줄 수 있다.
+    function sumTwoNums(a, b=25) {
+      console.log("sumTwoNums 함수 : " , a, b, a+b);
+    }
+
+    sumTwoNums(20);
+
+    function sumThree(a, b, c) {
+      console.log(a,b,c,a+b+c);
+    }
+    sumThree(10,20,30)
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

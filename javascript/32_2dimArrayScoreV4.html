@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2차원 배열</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    table {
+      width:80%;
+      height: 50%;
+      text-align: center;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    #sorted {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+  </style>
+  <script>
+    let students = new Array(10);
+    let names = ['홍길동', '김길동', '남길동', '서길동', '박길동', '윤길동', '아무개', '박효신', '북길동', '윤희성'];
+    // 학번, 이름, 국어, 영어, 수학, 총점, 평균, 학점을 2차원 배열을 생성하여 출력
+    for(let i=0; i<names.length; i++) {
+      students[i] = new Array(9);
+      students[i][0] = Math.floor(Math.random() * 50000 + 10000);         //학번
+      students[i][1] = names[i];                                          //이름
+      students[i][2] = Math.floor(Math.random() * 100 + 1);               //국어
+      students[i][3] = Math.floor(Math.random() * 100 + 1);               //영어
+      students[i][4] = Math.floor(Math.random() * 100 + 1);               //수학
+      students[i][5] = students[i][2] + students[i][3] + students[i][4];  //총점
+      students[i][6] = (students[i][5]/3).toFixed(2);                     //평균
+      students[i][7] = calculateGrades(students[i][6]);                   //학점
+      students[i][8] = 1;                   //등수 초기화
+    }
+
+    students[1][5] = 150;
+    students[2][5] = 150;
+    students[1][6] = 50.00;
+    students[2][6] = 50.00;
+    students[1][7] = calculateGrades(students[1][6]);
+    students[2][7] = calculateGrades(students[2][6]);
+
+     // 추가문제 2)
+     // 등수를 매겨보되,
+     // 평균이 같으면 순위는 같고 다음 순위는 등수가 한단계 밀려난다.
+    //등수 계산
+    for(let i=0; i<students.length; i++) {
+      for(let j=0; j<students.length; j++) {
+        if(students[j][6] > students[i][6]) {
+          students[i][8]++;
+        }
+      }
+    }
+
+    let tables = `<h1>정렬 전</h1><table border=1>
+                <tr>
+                  <th>학번</th>
+                  <th>이름</th>
+                  <th>국어</th>
+                  <th>영어</th>
+                  <th>수학</th>
+                  <th>총점</th>
+                  <th>평균</th>
+                  <th>학점</th>
+                  <th>등수</th>
+                </tr>`
+    for(let i=0; i<students.length; i++) {
+      tables += `<tr>`
+      for(let j=0; j<students[0].length; j++) {
+        tables += `<td>${students[i][j]}</td>`
+      }
+      tables += `</tr>`
+    }
+     // 추가문제 2)
+     // 등수를 매겨보되,
+     // 평균이 같으면 순위는 같고 다음 순위는 등수가 한단계 밀려난다.
+
+    console.log(students[0][6])
+    
+
+
+    
+    // let rank=0;
+    // for(let i=0; i<students.length-1; i++) {
+    //   rank++;
+    //   for(let j=0; j<students.length; j++) {
+    //     if(students[i][6] == students[j][6]) {
+    //       students[i][8] = i;
+    //       students[j][8] = i;
+    //     } else {
+    //       students[i][8] = rank;
+    //     }
+    //   }
+    // }
+
+
+    
+    // 학점을 리턴하는 함수
+    function calculateGrades(value) {
+      switch(Math.floor(value/10)) {
+        case 10:
+        case 9:
+          return "A"
+        case 8:
+          return "B"
+        case 7:
+          return "C"
+        case 6:
+          return "D"
+        default:
+          return "F"
+      }
+    }
+
+
+    
+     window.onload = () => {
+      sortTable();
+      document.getElementById("scoretable").innerHTML = tables;
+    }
+
+  function sortTable() {
+    let radios = document.getElementsByName("sort");
+    let legend = ""
+      
+    for(let radio of radios) {
+      if(radio.checked) {
+        sort(radio.value);
+      }
+    }
+  }
+  function sort(radioValue) {
+    let legend="";
+    if(radioValue == "down") {
+      legend = "내림차순";
+      for(let i=0; i<students.length; i++) {
+        for(let j=i+1; j<students.length; j++) {
+          if(students[i][6] < students[j][6]) {
+            let data = students[j];
+            students[j] = students[i];
+            students[i] = data;
+          }
+        }
+      }
+    }else {
+      legend="오름차순";
+      for(let i=0; i<students.length; i++) {
+        for(let j=i+1; j<students.length; j++) {
+          if(students[i][6] > students[j][6]) {
+            let data = students[j];
+            students[j] = students[i];
+            students[i] = data;
+          }
+        }
+      }
+    }
+
+    let docs = `
+      <h1>${legend}</h1>
+      <table border=1>
+        <tr>
+          <th>학번</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>수학</th>
+          <th>총점</th>
+          <th>평균</th>
+          <th>학점</th>
+          <th>등수</th>
+        </tr>`;
+
+    for(let i=0; i<students.length; i++) {
+      docs += `<tr>`
+      for(let j=0; j<students[0].length; j++) {
+        docs += `<td>${students[i][j]}</td>`
+      }
+      docs += `</tr>`
+    }
+    document.getElementById("sortedTable").innerHTML = docs;
+  }
+</script>
+</head>
+<body>
+  <div id="scoretable">
+  </div>
+  <div id="sorted">
+    <label target="desc">
+      <input type="radio" name="sort" id="desc" value="down" checked>내림차순 정렬
+    </label>
+    <label target="asc">
+      <input type="radio" name="sort" id="asc" value="up" >오름차순 정렬
+    </label>
+    <input type="button" value="정렬하기" onclick="sortTable()">
+    <div id="sortedTable"></div>
+  </div>
+</body>
+</html>
