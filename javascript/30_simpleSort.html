@@ -14,11 +14,12 @@
     for(let i=0; i<arr.length; i++) {
       arr[i] = Math.floor(Math.random()*100+1);
     }
-    
+    let cnt = 0;
     document.write("<h2>정렬 전 : " + arr.join(' > ').toLocaleString() + " <br></h2>");
-
-    for(let i=0; i<arr.length; i++) {
-      for(let j=0; j<arr.length; j++) {
+    // 버블정렬 오름차순
+    for(let i=0; i<arr.length-1; i++) {
+      for(let j=0; j<arr.length-1; j++) {
+        cnt++;
         if(arr[j] > arr[j+1]) {
           let a = arr[j];
           arr[j] = arr[j+1]
@@ -26,10 +27,11 @@
         }
       }
     }
-    
-    document.write("<h2>오름차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
-    for(let i=0; i<arr.length; i++) {
-      for(let j=0; j<arr.length; j++) {
+    console.log(cnt);
+    document.write("<h2>버블정렬 오름차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
+    // 버블정렬 내림차순
+    for(let i=0; i<arr.length-1; i++) {
+      for(let j=0; j<arr.length-1; j++) {
         if(arr[j] < arr[j+1]) {
           let b = arr[j];
           arr[j] = arr[j+1]
@@ -37,7 +39,32 @@
         }
       }
     }
-    document.write("<h2>내림차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
+    document.write("<h2>버블정렬 내림차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
+    // 선택정렬 내림차순
+    cnt = 0;
+    for(let i=0; i<arr.length-1; i++) {
+      for(let j=i+1; j<arr.length; j++) {
+        cnt++;
+        if(arr[i] > arr[j]) {
+          let a = arr[i];
+          arr[i] = arr[j];
+          arr[j] = a;
+        }
+      }
+    }
+    document.write("<h2>선택정렬 내림차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
+    // 선택정렬 오름차순
+    for(let i=0; i<arr.length-1; i++) {
+      for(let j=i+1; j<arr.length-1; j++) {
+        if(arr[i] < arr[j]) {
+          let a = arr[i];
+          arr[i] = arr[j];
+          arr[j] = a;
+        }
+      }
+    }
+    console.log(cnt);
+    document.write("<h2>선택정렬 오름차순 : " + arr.join(' > ').toLocaleString() + "</h2>");
   </script>
 </head>
 <body>
