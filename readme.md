@@ -145,6 +145,12 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/31_2dimArray">31_2dimArray.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/32_2dimArrayScoreV4">32_2dimArrayScoreV4.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/34_function">34_function.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/35_callOrderFunction">35_callOrderFunction.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/36_lexEnv">36_lexEnv.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/37_lotto">37_lotto.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/37-1_lottoSplice">37-1_lottoSplice.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/38_returnLLoop">38_returnLLoop.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/39_ex1">39_ex1.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>
