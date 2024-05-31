@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let a = 1;
+    
+    function funcA() {
+      let a = 10;
+      funcB();
+    }
+
+    function funcB() {
+      console.log(a); // 1
+    }
+
+    funcA();
+    funcB();
+    // 1. 함수가 호출된 곳 (동적 스코프 : dynamic scope)
+    // 2. 함수가 선언된 곳 (정적 스코프 : static scope | lexical scope)
+    // 3. 자바스크립트는 정적 스코프임
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

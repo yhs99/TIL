@@ -52,7 +52,33 @@
     function sumThree(a, b, c) {
       console.log(a,b,c,a+b+c);
     }
-    sumThree(10,20,30)
+    sumThree(10,20,30);
+
+    //지역, 전역변수
+    let gNum = 100; // 전역변수
+
+    function test() {
+      let gNum = 200;
+      let lNum = 5;
+      console.log(lNum);
+      return gNum;
+    }
+    
+    console.log(test());
+    
+    let gVar = "global";
+    function myFunc() {
+      let lVar = "local";
+      console.log(lVar);
+      console.log(gVar);
+      
+      function innerFunc() {
+        console.log(lVar);
+        let innerVar = "inner";
+      }
+      innerFunc();
+    }
+    myFunc();
   </script>
 </head>
 <body>

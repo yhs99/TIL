@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let pool = new Array(45);
+    let lotto = new Array(6);
+
+    // pool 배열에 1번부터 45번까지 넣기
+    for(let i=0; i<45; i++) {
+      pool[i] = i+1;
+    }
+
+    for(let i=0; i<lotto.length; i++) {
+      let index = Math.floor(Math.random() * pool.length);
+      lotto[i] = Number(pool.splice(index, 1).toLocaleString());
+    }
+    console.log(lotto);
+    for(let i=0; i<lotto.length-1; i++) {
+      for(let j=i+1; j<lotto.length; j++) {
+        if(lotto[i] > lotto[j]) {
+          let data = lotto[i];
+          lotto[i] = lotto[j];
+          lotto[j] = data;
+        }
+      }
+    }
+
+    document.write(lotto);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    #container {
+      margin-top: 50px;
+    }
+    span {
+      color: white;
+      font-weight: 800;
+      font-size: 30px;
+    }
+  </style>
+  <title>로또 번호 생성기</title>
+  <script>
+    // 1~45까지의 랜덤한 정수를 6개 뽑아서 배열에 담는다.
+    // 단, 중복은 허용하지 않음.
+    // 로또 번호 6개를 출력하세요.
+
+    let lottoNum = [];
+    let docs= "";
+
+    // 6개의 로또 번호를 출력하며 뽑아온 값을 lottoNum 변수에 push.
+    function pushNumbers() {
+      while(lottoNum.length < 6) {
+        let randomNum = getlottoNumber();
+        if(!isInlcude(lottoNum, randomNum)) { // isInclude 중복값이 존재할경우 true를 반환함
+          lottoNum.push(randomNum);
+        }
+      }
+    }
+
+    // 로또 번호를 정렬한다.
+    function sort() {
+      for(let i=0; i<lottoNum.length-1; i++) {
+        for(let j=i+1; j<lottoNum.length; j++) {
+          if(lottoNum[i] > lottoNum[j]) {
+            let data = lottoNum[i];
+            lottoNum[i] = lottoNum[j];
+            lottoNum[j] = data;
+          }
+        }
+      }
+    }
+
+    // 1~45까지의 랜덤 숫자를 return하는 함수
+    function getlottoNumber() {
+      let num = Math.floor(Math.random() * 45 + 1);
+      return num
+    }
+
+    // 로또에 중복되는 값이 있는지 검사 있을시 return boolean
+    function isInlcude(arr, num) {
+      for(let i=0; i<arr.length; i++) {
+        if(arr[i] == num) {
+          console.log(num + " 중복 발생");
+          return true; //중복 발생시 boolean을 return 하며 함수가 종료된다.
+        }
+      }
+      return false;
+    }
+
+    // 뽑은 로또 번호를 화면에 출력하는 함수
+    function drawTable() {
+      for(let i=0; i<lottoNum.length; i++) {
+        docs+= `
+          <span class='lottoNumbers text-center shadow p-5 m-4 rounded-circle col-md-auto'>${lottoNum[i]}</span>
+          `
+      }
+      document.getElementById("container").innerHTML = docs;
+      let numbers = document.getElementsByClassName("lottoNumbers");
+      for(let i=0; i<numbers.length; i++) {
+        let element = numbers[i];
+        let number = numbers[i].innerHTML;
+        if(number < 10) {
+          element.style.backgroundColor = "darkorange";
+        }else if(number < 20 && number >= 10) {
+          element.style.backgroundColor = "blue";
+        }else if(number < 30 && number >= 20) {
+          element.style.backgroundColor = "red";
+        }else if(number < 40 && number >= 30) {
+          element.style.backgroundColor = "gray";
+        }else {
+          element.style.backgroundColor = "green";
+        }
+      }
+    }
+
+    window.onload = () => {
+      pushNumbers();
+      sort();
+      drawTable();
+    }
+
+  </script>
+</head>
+<body>
+  <div class="container rows justify-content-md-center" id="container">
+
+  </div>
+</body>
+</html>

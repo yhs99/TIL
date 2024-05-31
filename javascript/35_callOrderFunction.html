@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function aaa () {
+      let a = 10, b = 20;
+      a = bbb(a, b); // a : 20
+      document.write(a + "<br>"); // a : 20
+      return a+b; // 40
+    }
+
+    function bbb(a, b) {
+      a = 20;
+      document.write(a + "<br>"); // 20
+      return a; //
+    }
+
+    function ccc() {
+      document.write("ⓐ <br>");
+      aaa();
+      document.write("ⓑ <br>");
+    }
+
+    document.write("ⓒ <br>");
+    ccc();
+  </script> 
+</head>
+<body>
+  
+</body>
+</html>
