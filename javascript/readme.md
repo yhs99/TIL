@@ -318,3 +318,117 @@ do {
 ```javascript
 반환값을 저장할 변수 = 함수명([매개변수1, 매개변수2 ....]);
 ```
+
+## Array.sort()
+```javascript
+++++ 숫자를 정렬하는 방법
+Array.sort(function(a, b) { // sort function
+  return a-b
+});
+
+Array.sort((a, b) => return a-b); //arrow function
+               ↓↓↓
+function compareFunction(a, b) {
+  if(a < b) {
+    a를 b보다 작은 색인으로 정렬. 즉 a가 먼저온다.
+  }else if(a == b) {
+    a와 b를 서로에 대해 변경하지 않고 모든 다른 요소에 대해 정렬.
+  }else if(a > b) {
+    b를 a보다 낮은 인덱스로 sort한다.
+  }
+};
+
+a-b : 오름차순
+b-a : 내림차순
+
++++++++ 문자열을 정렬하는 방법
+sort 메서드에 compareFunction을 적지 않을경우 요소를 문자열로 변환하고, 유니코드 포인트 순서로 문자열을 비교하여 정렬한다.
+예) 바나나 -> 체리 
+따라서 문자열을 정렬할 때 sort메서드에 비교함수를 넣어주지 않아도된다.
+```
+
+## Arrow Function 화살표 함수
+ES6 : 반환값이 있는 함수를 단축화해서 표현 <br>
+: function 키워드를 생략하고 => 를 사용하여 함수 표현식을 보다 단순하고 간결한 문법으로 함수를 만드는 방법
+```javascript
+function func(arg1, arg2, ...) {
+  return expression;
+}
+
+// 매개변수가 여러개일때
+let ex = (arg1, arg2, ...) => {
+  return expression;
+}
+
+// 매개변수가 1개일때
+let ex1 = arg1 => expression;
+
+// 실행 문장이 한줄일경우 {중괄호} 생략이 가능하다.
+let ex2 = () => {
+  return expression;
+}
+
+- 만약 {중괄호}가 있다면 return 키워드를 생략할 수 없다.
+- 만약 {중괄호}가 없다면 return 키워드가 없어도 expression이 반환된다.
+
+```
+
+## 참고) 배열관련 메소드
+```javascript
+
+  <script>
+    // every() : 배열의 모든 요소가 제공된 함수를 만족하는지 테스트
+    let arr = [1, 2, 3, 4];
+    const isValid = arr.every(item => item < 3);
+    console.log(isValid);
+
+    // find() : 배열에서 제공된 테스트 함수를 만족하는 첫 인덱스의 값을 반환한다
+    // findIndex() : 배열에서 제공된 테스트 함수를 만족하는 첫 인덱스를 반환한다.
+    let arr1 = [1, 3, 9, 15, 20];
+    const findItem = arr1.find((item) => item > 10);
+    console.log(findItem);
+
+    // flat()
+    let arr2 = [0,1,2,[3,4]];
+    console.log(arr2.flat());
+
+    let arr3 = [0,1,[2,[3,4]]];
+    console.log(arr3.flat(2));
+    let arr4 = [0,[1,[2,[3,4]]]];
+    console.log(arr4.flat(Infinity));
+
+    // includes() : 배열의 항목에 특정 값이 포함되어 있는지를 판단하여 boolean을 반환한다.
+    console.log(arr1.includes(3));
+    // indexOf() : 특정 값이 포함되어 있는지를 판단하여 있다면 해당 index를, 없으면 -1를 반환한다.
+    console.log(arr1.indexOf(3));
+    
+    if(arr1.indexOf(3)) {
+      console.log("2가 없습니다.");
+    }else {
+      console.log("!")
+    }
+
+    // map(), filter() 등
+    
+  </script>
+```
+
+
+## 내장 함수
+: 어떤 객체에도 속하지 않으나, 웹 브라우저의 자바스크립트 실행기에 내장된 함수들
+
+
+# Javascript 05. 객체 (Object)
+객체란?<br>
+: 현실 세계의 모든 것. <br>
+객체지향 언어 : 현실세계의 모든 것을 프로그래밍 코드로 변환하기 위해 만든 패러다임<br>
+
+- 객체는 속성(객체의 성질을 설명)과 기능(객체가 하는 일을 설명)
+- 속성, 기능을 객체의 멤버라고 한다.
+
+## (1) 내장 객체 (built-in object)
+1. Date 객체 : 자바스크립트에서 날짜, 시간을 표현하는 객체
+2. 
+
+## (2) 사용자 정의 객체
+: 프로그래머가 직접 만드는 객체

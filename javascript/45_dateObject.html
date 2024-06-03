@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date 객체</title>
+  <script>
+    let date = new Date();
+    document.write(`현재 : ${date.toLocaleString('kr')}<br>`);
+
+    let pastDate = new Date(2004, 0, 2, 16, 40);
+    document.write(`과거 : ${pastDate.toLocaleString()}<br>`);
+    let pastDate1 = new Date(2004, 0, 2);
+    document.write(`과거 : ${pastDate1.toLocaleString()}`);
+
+    let pastDate2 = new Date(date);
+    console.log(pastDate2);
+
+    //getter
+    document.write(`<br> 현재 연도 : ${date.getFullYear()} <br>`);
+    document.write(`현재 월 : ${date.getMonth()+1} <br>`); // Month는 0부터 시작함.
+    document.write(`현재 일 : ${date.getDate()} <br>`); // 0: 일요일부터 시작한다.
+    
+    // 요일을 담은 배열을 만들어서 오늘의 요일을 출력
+    let day = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+    document.write(`현재 요일 : ${day[date.getDay()]}<br>`);
+
+    // setter
+    let date2 = new Date();
+    document.write(`현재 : ${date2} <br>`);
+    date2.setDate(1);
+    document.write(`setDate(1) : ${date2} <br>`);
+    date2.setHours(18, 30, 30);
+    document.write(`setHours(18, 30, 30) : ${date2}<br>`);
+
+    //getTime()
+    document.write(`현재 getTime() : ${date2.getTime()}<br>`);
+
+    // 
+    let myBirthday = new Date(1999, 8, 9);
+    console.log(myBirthday);
+    let minusDate = date2.getTime() - myBirthday.getTime();
+    console.log(date2.getTime());
+    document.write(`${myBirthday.toLocaleDateString()} 으로부터 ${Math.floor(minusDate / (1000 * 60 * 60 * 24 * 30))} 개월 지났습니다.`);
+
+
+    //clock
+    let clock = setInterval(() => {
+      let now = new Date();
+      let docs = `현재 시각은 ${now.getFullYear()}년 ${now.getMonth()+1}월 ${now.getDate()}일 ${day[now.getDay()]}, ${now.getHours()}시 ${now.getMinutes()}분 ${now.getSeconds()}초 입니다.`;
+      document.getElementById("clock").innerHTML = docs;
+    }, 1000);
+
+    
+  </script>
+</head>
+<body>
+  <div id="clock">
+
+  </div>
+</body>
+</html>
