@@ -151,6 +151,13 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/37-1_lottoSplice">37-1_lottoSplice.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/38_returnLLoop">38_returnLLoop.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/39_ex1">39_ex1.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/40_recursiveFunc">40_recursiveFunc.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/41_factorial">41_factorial.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/42_arrowFunction">42_arrowFunction.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/43_arrayMethod">43_arrayMethod.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/44_builtInFunction">44_builtInFunction.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/45_dateObject">45_dateObject.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/46_dateObjEx1">46_dateObjEx1.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

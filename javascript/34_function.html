@@ -79,6 +79,27 @@
       innerFunc();
     }
     myFunc();
+
+
+    // 익명함수
+    let add = (a, b) => {
+      return a+b;
+    }
+    console.log(add(2,3));
+
+    // 즉시 실행 함수
+    let add1 = (() => {
+      return console.log(300 + 400);
+    })();
+
+    (() => {
+      return console.log(300 + 500);
+    })()
+
+    let add2 = ((a, b) => {
+      return a + b;
+    })(1000,2000);
+    console.log(add2);
   </script>
 </head>
 <body>

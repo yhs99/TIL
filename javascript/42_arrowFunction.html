@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Function</title>
+  <script>
+    // 1) 함수 선언식
+    function greeting() {
+      return "hello";
+    }
+
+    console.log(greeting());
+
+    // 2) 함수 표현식
+    //console.log(greetings()) // => ERROR - Cannot access 'greetings' before initialization
+    const greetings = () => {
+      return "hi";
+    }
+
+    console.log(greetings());
+
+
+    function sayHello() {
+      return "Hello"
+    }
+
+    const func1 = () => "Hello";
+    console.log(func1());
+
+    // 
+    const a = () => {}
+    const b = (x) => {}
+    const c = (x, y) => {}
+    const d = (x) => {return 2 * x};
+    const e = x => 2*x;
+    const f = x => {
+      console.log(2 * x);
+      return 2 * x;
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
