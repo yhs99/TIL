@@ -318,3 +318,31 @@ do {
 ```javascript
 반환값을 저장할 변수 = 함수명([매개변수1, 매개변수2 ....]);
 ```
+
+## Array.sort()
+```javascript
+++++ 숫자를 정렬하는 방법
+Array.sort(function(a, b) { // sort function
+  return a-b
+});
+
+Array.sort((a, b) => return a-b); //arrow function
+               ↓↓↓
+function compareFunction(a, b) {
+  if(a < b) {
+    a를 b보다 작은 색인으로 정렬. 즉 a가 먼저온다.
+  }else if(a == b) {
+    a와 b를 서로에 대해 변경하지 않고 모든 다른 요소에 대해 정렬.
+  }else if(a > b) {
+    b를 a보다 낮은 인덱스로 sort한다.
+  }
+};
+
+a-b : 오름차순
+b-a : 내림차순
+
++++++++ 문자열을 정렬하는 방법
+sort 메서드에 compareFunction을 적지 않을경우 요소를 문자열로 변환하고, 유니코드 포인트 순서로 문자열을 비교하여 정렬한다.
+예) 바나나 -> 체리 
+따라서 문자열을 정렬할 때 sort메서드에 비교함수를 넣어주지 않아도된다.
+```
