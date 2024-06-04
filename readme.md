@@ -158,6 +158,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/44_builtInFunction">44_builtInFunction.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/45_dateObject">45_dateObject.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/46_dateObjEx1">46_dateObjEx1.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/47_stringObject">47_stringObject.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

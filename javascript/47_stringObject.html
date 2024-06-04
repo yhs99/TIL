@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let str = new String("대한민국");
+
+    str = "대한민국 우리나라 좋은나라";
+    document.write(str + "<br>");
+    document.write(str.charAt(2) + "<br>") // 2번 인덱스의 문자를 출력
+    document.write(str.concat(', ', "좋아요") + "<br>");
+
+    document.write(str.indexOf("나") + "<br>"); // 7
+    document.write(str.indexOf("나", 8) + "<br>"); // 12
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
