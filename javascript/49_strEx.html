@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script>
+    // 우영우, 기러기
+    // 유저에게 문자열을 입력받아 입력된 문자가 회문인지 아닌지 판단하는 함수를 만드세요.
+    // 회문이면 true, 아니면 false
+    function isPalindrome(str) {
+      str = str.replaceAll(" ","");
+      let frontStr = str.slice(0, Math.floor(str.length/2));
+      let backStr = str.slice(Math.round(str.length/2, str.length)).split('').reverse().toString().replaceAll(",", "");
+      //              ^ : 문자열 시작
+      //             (.) : .을 포함한 그룹을 만든다 . 에는 줄바꿈을 제외한 어떤 문자든 한글자를 포함할 수 있다.
+      //             \1 : 첫번째 그룹을 참조
+      //             + : 참조 그룹의 조건이 1개 또는 그 이상 일치한지 비교한다
+      //             &  : 문자열 끝
+      let isSame = /^(.)\1+$/;
+      if(isSame.test(str)) {
+        return "회문이 아닙니다.";
+      }
+      return frontStr == backStr;
+    } 
+
+    console.log(isPalindrome("우우우우우우"));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

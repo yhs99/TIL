@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>정규표현식</title>
+  <script>
+    // 생성자
+    let str = "Debugging is removing bugs and programming is putting them in. Is it right?";
+    let regexp = new RegExp("is", "");
+    console.log(str.match(regexp));
+
+    let regexp1 = new RegExp("is", "g"); //global : 문장전체
+    console.log(str.match(regexp1));
+    let regexp2 = new RegExp("is", "gi"); //gi : 문장전체, 대소문자 무시
+    console.log(str.match(regexp2));
+
+    // 리터럴 방식
+    console.log(str.match(/is/gi));
+
+    console.log(regexp2.test(str));
+    console.log(str.replace(regexp2, "issss"));
+
+    function checkEmail() {
+      let email = document.getElementsByTagName("input")[0].value;
+      let phone = document.getElementsByTagName("input")[1].value;
+      let alert = "";
+      let reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+      let regPhone =  /^\d{3}-\d{3,4}-\d{4}$/;
+      if(!reg.test(email)) {
+        alert="이메일을 확인하세요.";
+      }else if(!regPhone.test(phone)) {
+        alert="핸드폰 번호를 확인하세요";
+      }else {
+        alert="통과"
+      }
+      document.getElementById("alert").innerHTML = alert;
+    }
+  </script>
+</head>
+<body>
+  email : <input type="text">
+  phone : <input type="text">
+  <input type="button" value="확인" onclick="checkEmail();">
+  <div id="alert"></div>
+</body>
+</html>

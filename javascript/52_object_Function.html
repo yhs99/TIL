@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생성자 함수</title>
+  <script>
+    let user1 = new Account("윤희성", 1000000, "110-495-962869");
+    let user2 = new Account("홍길동", 500000, "110-495-962868");
+    let user3 = new Account("홍길순", 300000, "110-495-962867");
+    
+    
+
+
+    user1.deposit(3500000);
+    document.write(`${user1.owner} 350만원 예금 후 : ${user1.checkBalance()}<br>`);
+
+    user1.transfer(user2, 2500000);
+    document.write(`${user1.owner} 250만원 인출 후 : ${user1.checkBalance()}<br>`);
+    document.write(`${user2.owner} 250만원 입금 후 : ${user2.checkBalance()}<br>`);
+    user2.withdraw(1000000);
+
+    document.write('<hr>');
+
+    document.write(`예금주 : ${user1.owner} <br>
+                    계좌번호 : ${user1.accNum} <br>
+                    최종잔액 : ${user1.checkBalance()} <br>`);
+
+    // setter
+    function Account(owner, balance, accNum) {
+      this.owner = owner;
+      this.balance = balance;
+      this.accNum = accNum;
+      this.name = "직장인 비과세 예금";
+      this.bankName = "신한은행";
+
+      this.checkBalance = () => {
+        return this.balance;
+      }
+
+      this.deposit = (balance) => {
+        this.balance += balance;
+      }
+
+      this.withdraw = (balance) => {
+        if(this.balance >= balance) {
+          console.log(`${this.owner}계좌에서 ${balance}원을 출금합니다.`);
+          this.balance -= balance;
+          console.log(`출금 완료 출금 후 잔액 : ${this.balance}`);
+        }
+      }
+
+      this.transfer = (user, balance) => {
+        if(this.balance >= balance) {
+          console.log(`${this.owner} 계좌에서 ${user.owner}에게 ${balance}원을 송금합니다.`);
+          this.balance -= balance;
+          user.balance += balance;
+          console.log("송금 완료");
+        }else {
+          alert("잔액이 부족합니다.");
+        }
+      }
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

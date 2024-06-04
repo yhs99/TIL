@@ -159,6 +159,11 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/45_dateObject">45_dateObject.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/46_dateObjEx1">46_dateObjEx1.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/47_stringObject">47_stringObject.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/48_regExp">48_regExp.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/49_strEx">49_strEx.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/50_object">50_object.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/51_object_new">51_object_new.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/52_object_Function">52_object_Function.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 └─ readme.md
 </pre>

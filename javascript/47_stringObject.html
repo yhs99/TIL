@@ -17,7 +17,22 @@
     
     document.write(str.substring(5,9) + "<br>"); // 대한민국
     document.write(str.substring(10, 12) + "<br>"); // 좋은
-    document.write(str.substring(indexOf("좋"), indexOf("은")));
+
+    let statement = "I am a student";
+    document.write(statement.toLowerCase() + "<br>");
+    document.write(statement.toUpperCase() + "<br>");
+
+    // statement에서 student라는 단어를 추출해서 대문자로 변환하여 출력하세요.
+    document.write(statement.substring(7).toUpperCase() + "<br>");
+    document.write(statement.substr(7, 7).toUpperCase() + "<br>");
+    document.write(statement.split(" ")[3].toUpperCase() + "<br>");
+     
+    //replace(바꿀문장, 넣을문장) : 문자열을 대체한다., trim() 양끝의 공백을 제거함
+    let name = " 홍 길 동 ";
+    document.write(name.replaceAll(" ", "") +"<br>");
+
+    // 정규식 (Regular Expression) 
+    console.log(name.replace(/\s/g, ''));
   </script>
 </head>
 <body>

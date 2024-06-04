@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 정의 객체</title>
+  <script>
+    let account = new Object();
+    console.log(typeof account);
+
+    // account 객체에 속성을 부여해보자.
+    account.owner = "윤희성";
+    account.accNum = "110-495-962869";
+    account.balance = 1049400;
+    account.name = "직장인 비과세 예금";
+    account.bankName = "신한은행";
+
+    // [] bracket을 이용해서 속성부여
+    account["no"] = "123456";
+    let accNo = "no";
+    account[accNo] = "98765"
+
+    console.log(account);
+
+    console.log(account.name);
+
+    // 예금하기, 인출하기, 잔액조회하기 -> 기능 (메서드)을 부여할 수 있다.
+    //잔액 조회하기
+    account.checkBalance = checkBalance;
+    //송금
+    account.withdraw = withdraw;
+    //예금
+    account.deposit = deposit;
+
+    account.deposit(500);
+    
+
+  
+    account.withdraw(500000);
+    account.withdraw(550000);
+    console.log(account.checkBalance());
+
+
+    function checkBalance() {
+      return this.balance;
+    }
+
+    function deposit(balance) {
+      this.balance += balance;
+    }
+
+    function withdraw(balance) {
+      if(this.balace >= balance) {
+        this.balance -= balance;
+      }else {
+        window.alert("잔액이 부족합니다.");
+        return false;
+      }
+      
+    }
+
+    document.write(`예금주 : ${account.owner} <br>`);
+    document.write(`계좌번호 : ${account.accNum} <br>`);
+    document.write(`잔액 : ${account.balance}원 <br>`);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
