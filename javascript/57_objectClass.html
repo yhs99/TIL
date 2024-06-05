@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    class Account {
+      constructor (owner, accNum, balance) {
+        this.owner = owner;
+        this.accNum = accNum;
+        this.balance = balance;
+      }
+      checkBalance() {
+        console.log(this.balance);
+      }
+    }
+    
+    let acc1 = new Account("홍", "110-495-962869", 500);
+    console.log(acc1.checkBalance());
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

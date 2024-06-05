@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>객체 생성, 관리 연습</title>
+  <style>
+    img {
+      cursor: pointer;
+    }
+    .carousel-dark .carousel-indicators [data-bs-target] {
+      background-color: antiquewhite;
+    }
+  </style>
+  <script>
+    // 자동차 카탈로그
+    // 가격, 제조사, 모델명, 색상, 설명, 이미지, 링크 등
+    function Car (maker, name, nameKO, price, image, description, link, descriptionDetail) {
+      this.maker = maker;
+      this.name = name;
+      this.nameKO = nameKO;
+      this.price = price;
+      this.image = image;
+      this.description = description;
+      this.link = link;
+      this.descriptionDetail = descriptionDetail;
+    }
+
+    let grandeur = new Car("Hyundai", "Granduer", "그랜져", 37680000, "https://www.hyundai.com/contents/mainbanner/%EB%94%94%EC%98%AC%EB%89%B4%EA%B7%B8%EB%9E%9C%EC%A0%80_720x300.png", "Outclass Grandeur", "https://www.hyundai.com/kr/ko/e/vehicles/grandeur/intro",
+      {
+        "승차인원" : "5명",
+        "차량형태" : "세단",
+        "구동방식" : "앞엔진-앞바퀴굴림",
+        "공차중량" : "1,390 ~ 1,520kg"
+      }
+    );
+    let ST1 = new Car("Hyundai", "IONIQ6", "아이오닉 6", 50000000, "https://www.hyundai.com/contents/mainbanner/ioniq6_black_edition_main_keyvisual_w.png", "내가 만드는 세상", "https://www.hyundai.com/kr/ko/e/vehicles/st1/intro",
+      {
+        "승차인원" : "5명",
+        "차량형태" : "세단",
+        "구동방식" : "양모터-4바퀴굴림",
+        "공차중량" : "2,365 ~ 2510kg"
+      }
+    );
+    let ioniq5 = new Car("Hyundai", "The New IONIQ 5", "아이오닉5", 52400000, "https://www.hyundai.com/contents/mainbanner/ioniq5_main_kv_w.png", "내가 선택한 단 하나의 전기차", "https://www.hyundai.com/kr/ko/e/vehicles/the-new-ioniq5/intro",
+      {
+        "승차인원" : "5명",
+        "차량형태" : "CUV",
+        "구동방식" : "양모터-4바퀴굴림",
+        "공차중량" : "1,840 ~ 2,060kg"
+      }
+    );
+    let casper = new Car("Hyundai", "Casper", "캐스퍼", 14650000, "https://www.hyundai.com/contents/mainbanner/main_kv_CASPER_car_w.png", "case by CASPER", "https://casper.hyundai.com/",
+      {
+        "승차인원" : "4명",
+        "차량형태" : "CUV",
+        "구동방식" : "앞엔진-앞바퀴굴림",
+        "공차중량" : "985 ~ 1,060kg"
+      }
+    );
+    let active = "active"
+    let cars = [];
+    cars.push(grandeur, ST1, ioniq5, casper);
+
+    let docs="";
+    for(let car in cars) {
+      docs += `<div class="carousel-item ${car==0 ? active : ""}">`
+      docs += ` <img src="${cars[car].image}" class="d-block w-100" data-bs-toggle="modal" data-bs-target="#${cars[car].name.replaceAll(" ", "")}" alt="..." style="width:100%; height: 480px;">`
+      docs += ` <div class="carousel-caption" style="margin-bottom:70px;">`
+      docs += `   <h1 class="text-white"">${cars[car].name}</h1>`
+      docs += `   <p class="text-white">${cars[car].description}</p>`
+      docs += ` </div>`
+      docs += `</div>`
+    }
+    let modals="";
+    for(let car of cars) {
+      modals+=`<div class="modal" id="${car.name.replaceAll(" ", "")}">`;
+      modals+=`  <div class="modal-dialog">`;
+      modals+=`    <div class="modal-content">`;
+      modals+=`      <div class="modal-header">`;
+      modals+=`        <h2 class="modal-title fw-bold">${car.nameKO}</h2>&nbsp|&nbsp<small class="">${car.name}</small>`;
+      modals+=`        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>`;
+      modals+=`      </div>`;
+      modals+=`      <div class="modal-body">`;
+      modals+=`        <p>가격 : ${car.price.toLocaleString()} 원부터 시작</p>`;
+      for(let detail in car.descriptionDetail) {
+        modals+=`        <p>${detail} : ${car.descriptionDetail[detail]}</p>`;
+      }
+      modals+=`      </div>`
+      modals+=`      <div class="modal-footer">`;
+      modals+=`        <button type="button" class="btn btn-success" onclick="window.location='${car.link}'">구매하러 가기</button>`;
+      modals+=`      </div>`
+      modals+=`    </div>`
+      modals+=`  </div>`
+      modals+=`</div>`
+    }
+    window.onload = () => {
+      document.getElementById("modals_div").innerHTML = modals;
+      document.getElementById("carousel-inner").innerHTML = docs;
+    }
+  </script>
+</head>
+<body>
+<div class="container mt-4">
+  <!-- <div class="mt-4 p-5 bg-primary text-white rounded">
+    <h1>Jumbotron Example</h1>
+    <p>Lorem ipsum...</p>
+  </div> -->
+  <div id="carouselIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner" id="carousel-inner">
+      <div class="carousel-inner">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div id="modals_div">
+
+</div>
+</body>
+</html>

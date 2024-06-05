@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>성적표 v5</title>
+  <style>
+    .calculatedForm {
+      display: block;
+    }
+  </style>
+  <script>
+    // input 태그를 이용해서 5명 학생의 이름, 국어, 영어, 수학점수를 입력받아,
+    // "성적처리" 버튼을 누르면 총점, 평균, 학점, 등수를 테이블로 출력하되
+    // 성적처리 버튼을 누르기 전에는 보이지 않게 한다.
+    // 검색창을 만들어서, 학생이름으로 검색하면, 그 학생의 성적이 보이도록 한다.
+    // 객체를 이용할 것
+
+    let obj = [];
+    function Student(name, korean, english, math) {
+      this.name = name;
+      this.korean = korean;
+      this.english = english;
+      this.math = math;
+      this.total = (this.korean + this.english + this.math);
+      this.average = (this.total / 3).toFixed(2);
+      this.grade = calGrade(Math.floor(this.average));
+      this.rank = 1;
+
+      function calGrade(average) {
+        switch(Math.floor(average / 10)) {
+          case 10:
+          case 9:
+            return "A";
+            break;
+          case 8:
+            return "B";
+            break;
+          case 7:
+            return "C";
+            break;
+          case 6:
+            return "D";
+            break;
+          default:
+            return "F";
+        }
+      }
+
+    }
+
+    function addStudent() {
+      let subject = ["name", "korean", "english", "math"];
+      let scoreTable = document.getElementById("insertScore").children[1];
+      let tr = document.createElement("tr");
+      let btn = document.createElement("input");
+      let td = document.createElement("td");
+      for(let i=0; i<subject.length; i++) {
+        let td = document.createElement("td");
+        let inputText = document.createElement("input");
+        inputText.setAttribute("type", "text");
+        inputText.setAttribute("class", "form-control " + subject[i]);
+        td.appendChild(inputText);
+        tr.append(td);
+      }
+      btn.setAttribute("type", "button");
+      btn.setAttribute("class", "btn btn-danger");
+      btn.setAttribute("onclick", "removeStudent(this)");
+      btn.setAttribute("value", "X");
+      td.appendChild(btn);
+      tr.appendChild(td);
+      scoreTable.appendChild(tr);
+    }
+    
+    function removeStudent(element) {
+      element.parentNode.parentNode.remove();
+    }
+
+    function drawTable() {
+      let calTable = document.getElementById("calculatedTable");
+      let docs="";
+      docs+=`
+        <tr>
+          <th>이름</th> 
+          <th>국어</th> 
+          <th>영어</th> 
+          <th>수학</th> 
+          <th>총점</th> 
+          <th>평균</th> 
+          <th>학점</th> 
+          <th>등수</th>  
+        </tr>
+      `;
+
+      for(student of obj) {
+        docs+= `
+          <tr>
+            <td>${student.name}</td>
+            <td>${student.korean}</td>
+            <td>${student.english}</td>
+            <td>${student.math}</td>
+            <td>${student.total}</td>
+            <td>${student.average}</td>
+            <td>${student.grade}</td>
+            <td>${student.rank}</td>
+          </tr>
+        `
+      }
+      docs += `<tr>
+                <td colspan="8">
+                  <div class="row text-center">
+                    <div class="col-8">
+                      <input type="text" class="form-control col-2" id="query">
+                    </div>
+                    <div class="col-2">
+                      <input type="button" class="btn btn-primary" value="검색" onclick="searchStudent(this.value)"> 
+                    </div>
+                    <div class="col-2">
+                      <input type="button" class="btn btn-danger" value="초기화" onclick="drawTable()">  
+                    </div>
+                  </div>
+                </td>
+              </tr>`
+      calTable.innerHTML = docs;
+    }
+
+    function createObj() {
+      let nameArr = document.getElementsByClassName("name");
+      let koreanArr = document.getElementsByClassName("korean");
+      let englishArr = document.getElementsByClassName("english");
+      let mathArr = document.getElementsByClassName("math");
+      let insertTable = document.getElementById("insertTable");
+      insertTable.style = "display : none";
+      
+
+      for(let i=0; i<nameArr.length; i++) {
+        obj.push(new Student(nameArr[i].value, Number(koreanArr[i].value), Number(englishArr[i].value), Number(mathArr[i].value)));
+      }
+
+      for(let i=0; i<obj.length; i++) {
+        for(let j=0; j<obj.length; j++) {
+          if(obj[i].total < obj[j].total) {
+            console.log(obj[i].name);
+            obj[i].rank++;
+          }
+        }
+      }
+      
+
+      drawTable();
+    }
+
+    function searchStudent() {
+      let param = document.getElementById("query").value;
+      for(let student of obj) {
+        if(student.name == param) {
+          console.log("일치!");
+          drawSearchTable(student.name);
+          return true;
+        }
+      }
+      alert("일치하는 학생이 없어요");
+    }
+
+    function drawSearchTable(name) {
+      document.getElementById("calculatedTable").innerHTML="";
+      let calTable = document.getElementById("calculatedTable");
+      console.log("searching : " + name);
+      let docs = "";
+      for(let student of obj) {
+          console.log(student.name);
+          let docs="";
+          docs+=`
+            <tr>
+              <th>이름</th> 
+              <th>국어</th> 
+              <th>영어</th> 
+              <th>수학</th> 
+              <th>총점</th> 
+              <th>평균</th> 
+              <th>학점</th> 
+              <th>등수</th>  
+            </tr>
+          `;
+
+          for(student of obj) {
+            if(student.name == name) {
+              docs+= `
+                <tr>
+                  <td>${student.name}</td>
+                  <td>${student.korean}</td>
+                  <td>${student.english}</td>
+                  <td>${student.math}</td>
+                  <td>${student.total}</td>
+                  <td>${student.average}</td>
+                  <td>${student.grade}</td>
+                  <td>${student.rank}</td>
+                </tr>
+              `
+            }
+          }
+          docs += `<tr>
+                <td colspan="8">
+                  <div class="row text-center">
+                    <div class="col-8">
+                      <input type="text" class="form-control col-2" id="query">
+                    </div>
+                    <div class="col-2">
+                      <input type="button" class="btn btn-primary" value="검색" onclick="searchStudent()"> 
+                    </div>
+                    <div class="col-2">
+                      <input type="button" class="btn btn-danger" value="초기화" onclick="drawTable()">  
+                    </div>
+                  </div>
+                </td>
+              </tr>`
+          calTable.innerHTML = docs;
+        }
+      }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="text-center">
+      <h1>성적표 V5</h1>
+    </div>
+    <div id="insertTable">
+      <table class="table text-center table-bordered table-striped table-hover" id="insertScore">
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>국어</th>
+            <th>영어</th>
+            <th>수학</th>
+            <th>제거</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+      <div class="float-end">
+        <input type="button" class="btn btn-success" value="학생 추가하기" onclick="addStudent();">
+      </div>
+      <div class="float-none">
+        <input type="submit" class="btn btn-primary" value="성적처리" onclick="createObj();">
+      </div>
+    </div>
+  </div>
+  <div class="container calculatedForm mt-4">
+    <table id="calculatedTable" class="table table-bordered table-hover table-striped">
+    </table>
+  </div>
+</body>
+</html>

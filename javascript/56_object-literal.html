@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 생성 : literal </title>
+  <script>
+    let acc = {
+      owner : "홍길동",
+      accNum : "1111-023-04-987655",
+      balance : 500,
+      name : "직장인 비과세 예금",
+      checkBalance : () => {
+        return this.balance;
+      },
+
+      deposit : money => {
+        this.balance += money;
+      },
+
+      withdraw : money => {
+        if(this.balance >= money) {
+          this.balance -= money;
+        } else {
+          alert("잔액이 부족합니다.");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
