@@ -169,7 +169,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/55_objEx1">55_objEx1.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/56_object-literal">56_object-literal.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/57_objectClass">57_objectClass.html</a>
-│  ├─ <a href="https://yhs99.github.io/goott/javascript/58_object_Function">58_object_Function.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/58_scoreV5">58_scoreV5.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 │  └─ js
 │     └─ <a href="https://yhs99.github.io/goott/javascript/js/account.js">account.js</a>
