@@ -19,6 +19,7 @@
     // 객체를 이용할 것
 
     let obj = [];
+    let sorted = true;
     function Student(name, korean, english, math) {
       this.name = name;
       this.korean = korean;
@@ -83,14 +84,14 @@
       let docs="";
       docs+=`
         <tr>
-          <th>이름</th> 
-          <th>국어</th> 
-          <th>영어</th> 
-          <th>수학</th> 
-          <th>총점</th> 
-          <th>평균</th> 
-          <th>학점</th> 
-          <th>등수</th>  
+          <th id="name">이름</th> 
+          <th id="korean" role="button" onclick="sortTable(this)">국어</th> 
+          <th id="english" role="button" onclick="sortTable(this)">영어</th> 
+          <th id="math" role="button" onclick="sortTable(this)">수학</th> 
+          <th id="total" role="button" onclick="sortTable(this)">총점</th> 
+          <th id="average" role="button" onclick="sortTable(this)">평균</th> 
+          <th id="grade" role="button" onclick="sortTable(this)">학점</th> 
+          <th id="rank" role="button" onclick="sortTable(this)">등수</th>  
         </tr>
       `;
 
@@ -219,6 +220,18 @@
           calTable.innerHTML = docs;
         }
       }
+
+    function sortTable(tableElement) {
+      if(sorted) {
+        obj.sort((a, b) => b[tableElement.id] - a[tableElement.id]);
+        sorted = false;
+      }else {
+        obj.sort((a, b) => a[tableElement.id] - b[tableElement.id]);
+        sorted = true;
+      }
+      drawTable();
+    }
+
   </script>
 </head>
 <body>
@@ -230,10 +243,10 @@
       <table class="table text-center table-bordered table-striped table-hover" id="insertScore">
         <thead>
           <tr>
-            <th>이름</th>
-            <th>국어</th>
-            <th>영어</th>
-            <th>수학</th>
+            <th id="name" data-column="0" role="button">이름</th>
+            <th id="korean" data-column="1" role="button" onclick="sortTable(this)">국어</th>
+            <th id="english" data-column="2" role="button" onclick="sortTable(this)">영어</th>
+            <th id="math" data-column="3" role="button" onclick="sortTable(this)">수학</th>
             <th>제거</th>
           </tr>
         </thead>
