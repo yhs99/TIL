@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      const parentElt = document.querySelector(".pare");
+      console.log(parentElt.tagName); // 대문자로 반환한다. 비교문 사용시 주의
+
+      const childElt = document.querySelector(".child");
+      console.log(childElt);
+      childElt.id = "id-child1";
+      console.log(childElt.id);
+
+      // Element.dataset 속성
+      // 요소의 각 'data-' 속성 값을 얻어오거나, 할당해 줄 수 있다.
+      const str = "Hello World";
+      childElt.dataset.helloWorld = str;
+      console.log(childElt.dataset);
+      const obj = {a : 1, b : 2};
+      childElt.dataset.object = JSON.stringify(obj);
+      console.log(JSON.parse(childElt.dataset.object))
+
+      childElt.className += " first"
+      console.log(childElt.classList.toggle("active"));
+      childElt.classList.remove("active");
+      console.log(childElt);
+
+      childElt.addEventListener("click", () => {
+        childElt.classList.toggle("active");
+        console.log(childElt.classList.contains("active"));
+      });
+
+      childElt.style.width = "250px";
+      childElt.style.fontSize = "30px";
+      childElt.style.backgroundColor = "pink";
+      childElt.style.textAlign = "center";
+      
+
+      const button = document.querySelector("button");
+      button.setAttribute("name", "clickBtn");
+      button.setAttribute("disabled", "");
+
+    }
+  </script>
+</head>
+<body>
+    <div class="pare">
+      <div class="child">content-1</div>
+      <div class="child">content-2</div>
+      <button>click</button>
+    </div>
+</body>
+</html>

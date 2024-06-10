@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      const divElement = document.createElement("div"); // 메모리에만 존재하는 새로운 div요소를 생성해서 반환
+      console.log(divElement);
+      
+      const inputElement = document.createElement("input");
+      console.log(inputElement);
+
+      const parentElement = document.querySelector(".pare");
+      divElement.textContent = "Hi";
+      parentElement.prepend(new Comment("주석")) // Element.prepend() : 첫번째 자식으로 삽입
+      parentElement.append(divElement); // Element.append() : 마지막 자식으로 삽입
+      parentElement.append("!!")
+      console.log(parentElement);
+
+      const elt1 = document.createElement("div");
+      elt1.textContent = "안녕하세요.";
+      parentElement.append(elt1, "텍스트");
+
+      const childElement = document.querySelector(".child");
+      childElement.remove();
+
+      // Element.insertAdjacentElement(position, element) :
+      // position  : beforebegin, afterbegin, beforeend, afterend
+      //  (beforebegin)
+      // <p>
+      //   (afterbegin)
+      //   foo
+      //   (beforeend)
+      // </p>
+      // (afterend)
+      
+      const childElement2 = document.querySelector(".child");
+      console.log(childElement2);
+      const newElt = document.createElement("span");
+      newElt.textContent = "Hello, "
+      childElement2.insertAdjacentElement("afterbegin", newElt);
+
+      // Node.insertBefore(new Node, target Node)
+      // 부모노드 자식인 참조노드의 이전 형제로 새로운노드를 삽입한다.
+      const newElt2 = document.createElement("div");
+      newElt2.textContent = "test-insertBefore";
+      parentElement.insertBefore(newElt2, childElement2);
+
+      // Node.contains(Node) : 노드가 포함되는지 boolean을 반환한다. (자기 자신 포함)
+      console.log(parentElement.contains(childElement2)); // true
+    }
+  </script>
+</head>
+<body>
+    <div class="pare">
+      <div class="child">content-1</div>
+      <div class="child">content-2</div>
+    </div>
+</body>
+</html>

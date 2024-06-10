@@ -428,7 +428,15 @@ let ex2 = () => {
 
 ## (1) 내장 객체 (built-in object)
 1. Date 객체 : 자바스크립트에서 날짜, 시간을 표현하는 객체
-2. 
+2. String 객체
 
 ## (2) 사용자 정의 객체
 : 프로그래머가 직접 만드는 객체
+
+# JS 06. DOM traversing
+DOM (Document Object Model) <br>
+: DOM은 웹 문서의 모든 요소를 자바스크립트를 이용해서 조작할 수 있도록 객체를 사용해서 문서를 해석하는 방법 <br>
+
+- DOM Tree
+<img src="./images/dom-tree.png">
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function sayHello() {
+      alert("Hello");
+    }
+
+    function sayHi() {
+      alert("HI");
+    }
+
+    window.onload = () => {
+      let btn3 = document.getElementById("btn3");
+      let btn4 = document.getElementById("btn4");
+      let btn5 = document.getElementById("btn5");
+      btn3.onclick = sayHello;
+
+      btn4.addEventListener("click", sayHi);
+      btn4.addEventListener("click", () => {alert("hi")})
+      btn5.addEventListener("dblclick", sayHello);
+    }
+  </script>
+</head>
+<body>
+  <button>버튼1</button>
+  <button>버튼2</button>
+  <button id="btn3">버튼3</button>
+  <button id="btn4">버튼4</button>
+  <button id="btn5">버튼5</button>
+</body>
+</html>

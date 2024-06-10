@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      const e = document.getElementById("child2");
+      console.log(e);
+      console.log(document.getElementsByClassName("child"));
+      const e1 = document.querySelector(".child:last-child");
+      console.log(e1);
+
+      const nodeList = document.querySelectorAll(".child");
+      console.log(nodeList);
+      nodeList.forEach((el) => {
+        console.log(el.textContent);
+      })
+
+      console.log(Array.from(nodeList)); // Array.from() : 유사배열을 Array로 return해준다.
+      console.log(Array.from(nodeList).reverse()); // Array.from을 통해 배열로 바꿔주어서 Array 객체의 메소드를 사용 가능해졌다.
+
+      const e2 = document.querySelector(".child");
+      console.log(e2.parentElement);
+      
+      //Node.previousSibling, Node.nextSibling Method
+      //노드의 이전 형제, 다음 형제 노드를 반환한다.
+      console.log(e2.nextElementSibling)
+      console.log(e2.previousSibling.parentElement)
+
+      const eParent = document.querySelector(".pare");
+      console.log(eParent.firstElementChild);
+      console.log(eParent)
+    }
+  </script>
+</head>
+<body>
+    <div class="pare">
+      <div class="child">content-1</div>
+      text1
+      <div class="child" id="child2">content-2</div>
+      text2
+    </div>
+</body>
+</html>

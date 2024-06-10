@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/b01140bb61.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    i {
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      let elementI = document.querySelectorAll("i");
+      elementI.forEach((elements) => {
+        elements.onclick = (e) => {
+          e.target.classList.toggle("fa-regular");
+          e.target.classList.toggle("fa-solid");
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <ul id="list">
+    <li>list1 <i class="fa-regular fa-heart"></i></li>
+    <li>list2 <i class="fa-regular fa-heart"></i></li>
+    <li>list3 <i class="fa-regular fa-heart"></i></li>
+  </ul>
+</body>
+</html>
