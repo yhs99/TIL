@@ -440,3 +440,22 @@ DOM (Document Object Model) <br>
 - DOM Tree
 <img src="./images/dom-tree.png">
 
+- DOM API (Document Object Model Application Programming Interface)<br>
+웹 문서의 동적 변경을 위해 DOM이 자신에 접근하고 수정할 수 있는 방법을 제공하는데, 이를 DOM API라고 부른다.
+
+- event handler
+  1) 인라인
+  2) property 속성
+  3) addEventListener(이벤트, 이벤트핸들러)메서드
+
+# 자바스크립트 주요 내장 객체와 멤버들
+
+1. window : 브라우저 창이 열릴 때 마다 하나씩 만들어지는 객체.
+
+2. location : 사용자 브라우저와 관련된속성과 메서드를 제공하는 객체, 현재 url에 대한 정보(속성)와 새로고침(reload()) 메서드를 제공한다.
+
+3. history : user가 방문했던 페이지 기록을 통해 방문해썯ㄴ 페이지로 다시 이동하도록 돕는다.
+  - history.back()
+  - history.forward()
+  - history.go(-2)
+4. navigator : 브라우저 정보

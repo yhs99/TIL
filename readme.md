@@ -179,6 +179,15 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/65_dom_create_remove">65_dom_create_remove.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/66_eventHandler">66_eventHandler.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/67_domClass">67_domClass.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/68_dom">68_dom.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/69_window">69_window.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/70_modalEx1">70_modalEx1.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/71_modal-bootstrap">71_modal-bootstrap.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/72_locationObject">72_locationObject.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/72-1_page2">72-1_page2.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/72-1_page3">72-1_page3.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/73_navigatorObject">73_navigatorObject.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/74_pcOrMobile">74_pcOrMobile.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 │  └─ js
 │     └─ <a href="https://yhs99.github.io/goott/javascript/js/account.js">account.js</a>
