@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      let pQsel = document.querySelectorAll("p");
+      let pGetEl = document.getElementsByTagName("p");
+      console.log(pQsel);
+      console.log(pGetEl);
+
+      // 새로운 p태그를 추가
+      let newP = document.createElement("p");
+      let newText = document.createTextNode("new paragraph");
+      newP.append(newText);
+      document.body.append(newP);
+      console.log(pQsel);   // nodeList는 DOM의 정적인 변화를 감지하지 못한다.
+      console.log(pGetEl);  // HTMLCollection은 DOM의 정적인 변화를 바로 감지하여 출력한다.
+    }
+  </script>
+</head>
+<body>
+  <p id="firstP">first paragraph</p>
+  <p id="secondP">second paragraph</p>
+  <p id="thirdP">third paragraph</p>
+</body>
+</html>
