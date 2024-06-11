@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3b14a1787685dcb59d013484ea1b33c"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <title>navigator 객체의geolocation를 이용해서 위치 정보 얻기</title>
+  <style>
+    #map {
+      width: 100%;
+      height: 500px;
+    }
+  </style>
+
+  <script>
+    function getLocation() {
+      navigator.geolocation.getCurrentPosition(showPosition, outputErr);
+    }
+
+    function showPosition(e) {
+      var container = document.getElementById("map");
+      console.log(e.coords.latitude, e.coords.longitude)
+      var options = {
+        center: new kakao.maps.LatLng(e.coords.latitude, e.coords.longitude),
+        level: 3
+      };
+      var map = new kakao.maps.Map(container, options);
+    }
+
+    function outputErr(e) {
+      
+    }
+
+    function searchPost() {
+      new daum.Postcode({
+        oncomplete: (data) => {
+          console.log(data);
+        }
+      }).open();
+    }
+  </script>
+</head>
+<body>
+  <button onclick="getLocation()">클릭</button>
+  
+  <div id="map"></div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navigator 객체</title>
+  <script>
+    window.onload = () => {
+      // 현재 브라우저의 코드명 반환
+      let output = `appCodeName : ${navigator.appCodeName}<br>`
+      // 현재 브라우저의 이름을 반환
+      output += `appName : ${navigator.appName}<br>`
+      // 현재 브라우저의 버전을 반환
+      output += `appVersion : ${navigator.appVersion}<br>`
+      //브라우저와 운영체제의 종합 정보를 반환
+      output += `userAgent : ${navigator.userAgent}<br>`
+      // 운영체제의 정보를 반환
+      output += `platform : ${navigator.platform}<br>`
+      // 언어정보를 반환
+      output += `langauge : ${navigator.language}`
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+</head>
+<body>
+  <div id="output"></div>
+</body>
+</html>
