@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>접속환경이 PC인지 Mobile인지</title>
+  <script>
+    let pcFilter = ["win16", "win32", "win64", "mac", "macintel"];
+    let isPc = false;
+    for(let pc of pcFilter) {
+      if(navigator.platform.toLocaleLowerCase().includes(pc)) {
+        isPc=true;
+        alert(navigator.platform);
+      }else {
+        isPc=false;
+        alert(navigator.platform);
+      }
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
