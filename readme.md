@@ -188,6 +188,9 @@
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/72-1_page3">72-1_page3.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/73_navigatorObject">73_navigatorObject.html</a>
 │  ├─ <a href="https://yhs99.github.io/goott/javascript/74_pcOrMobile">74_pcOrMobile.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/75_calculator">75_calculator.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/76_geolocation">76_geolocation.html</a>
+│  ├─ <a href="https://yhs99.github.io/goott/javascript/78_sideProperty">78_sideProperty.html</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">javascript정리.md</a>
 │  └─ js
 │     └─ <a href="https://yhs99.github.io/goott/javascript/js/account.js">account.js</a>
