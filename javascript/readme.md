@@ -459,3 +459,43 @@ DOM (Document Object Model) <br>
   - history.forward()
   - history.go(-2)
 4. navigator : 브라우저 정보
+
+
+# javascript 요소 사이즈와 스크롤
+참고 사이트 : https://ko.javascript.info/size-and-scroll
+<img src="./images/size-scroll.png">
+
+
+# JS 07. 이벤트 (event)
+웹 브라우저에서 어떤 이벤트( 마우스클릭, 드래그, 키보드입력, 페이지로딩)이 발생하면 자바스크립트를 통해 해당 이벤트를 처리할 수 있다.
+
+## 1. 키보드 관련이벤트
+:keydown, keypress, keyup
+
+  - keydown, keypress 차이점:<br>
+  keydown은 물리적으로 어떤 키가 눌렸는지에 관심이 있지만, keypress는 실제로 어떤 값이 입력되는지에 관심이 있다.
+
+## 2. 마우스 관련 이벤트
+- click <br>
+- dbclick <br>
+- mousedown <br>
+- mouseup <br>
+- mousemove <br>
+- mouseover <br>
+- mouseout <br>
+- drag..~ <br>
+- focus <br>
+- blur <br>
+
+## 3. change
+: 값이 바뀔 때 동작하는 이벤트
+
+## 4. 이벤트 버블링 (event bubbling)
+: 자식 요소에서 발생한 이벤트가 부모 요소로 전파(propagation)됨을 의미<br>
+
+- event.stopPropagation() : 이벤트 전파 중지시킨다
+- addEventListener(이벤트, 핸들러, {capture : true}) : 해당 이벤트를 가장 먼저 동작시킨다.
+- event.preventdefault() : default 행동을 멈추게한다 ex) submit , a href
+
+# JS 08. 쿠키(Cookie)
+:서버가 클라이언트에 저장하는 텍스트 파일 (4kb, 도메인당 20개 제한)

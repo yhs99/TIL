@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function cntLength(val) {
+      let output = document.getElementById("output");
+      output.textContent = val + "자 입력중";
+    }
+
+    //focus: 해당 속성이 선택되었을때
+    //blur : focus를 잃을 때
+
+    window.onload =  () => {
+      let inputTag2 = document.getElementById("txt2");
+      let inputTag3 = document.getElementById("txt3");
+      inputTag2.addEventListener("focus", (e) => e.target.style.backgroundColor = "lightgreen");
+      inputTag2.addEventListener("blur", (e) => e.target.style.backgroundColor = "white");
+      inputTag3.addEventListener("focus", (e) => e.target.style.backgroundColor = "lightgreen");
+      inputTag3.addEventListener("blur", (e) => e.target.style.backgroundColor = "white");
+    }
+  </script>
+</head>
+<body>
+  <input id="userInput" type="text" onkeyup="cntLength(this.value.length)">
+  <div id="output"></div>
+
+  <div>
+    <input type="text" name="" id="txt2" >
+    <input type="text" name="" id="txt3">
+  </div>
+</body>
+</html>

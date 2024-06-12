@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./common.js"></script>
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      let checkCookie = findCookie("popup");
+      if(!checkCookie.status) {
+        document.getElementById("message").innerHTML = checkCookie.message;
+        window.open("87-1_sub.html", "popup", "top=20, left=100, width=300, height=200")
+      }else {
+        document.getElementById("message").innerHTML = checkCookie.message;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="message"></div>
+  <input type="button" value="팝업쿠키삭제" onclick="deleteCookie('popup')">
+</body>
+</html>

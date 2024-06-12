@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./common.js"></script>
+  <title>Document</title>
+  <script>
+    function closePopup() {
+      let check = document.getElementById("check").checked
+      if(check) {
+        let expire = new Date();
+        expire.setDate(expire.getDate() + 1);
+        addCookie("ddd","Y", expire.toUTCString());
+        addCookie("popup","Y", expire.toUTCString());
+        addCookie("eee","Y", expire.toUTCString());
+        window.close();
+      }else {
+        window.close();
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="notice">
+    <h1>공지사항</h1>
+      <div>
+        쿠키쿠키쿠키쿠키쿠키쿠키쿠키쿠키쿠키쿠키쿠키
+      </div>
+      <hr>
+      <div>
+        <label for="check">
+          <input type="checkbox" id="check">하루동안 이 창 열지 않기
+        </label>
+      </div>
+      <div>
+        <input type="button" value="닫기" onclick="closePopup()">
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function saveCookie() {
+      let myCookie = "";
+      let now = new Date();
+      now.setDate(now.getDate()+1);
+      console.log(now.toUTCString());
+      myCookie = "myCookie=11;expires="+now.toUTCString();
+      console.log(myCookie);
+      document.cookie = myCookie;
+
+      now = new Date();
+      now.setMinutes(now.getMinutes()+2);
+      document.cookie = "2minCookie=bye;expires="+now.toUTCString();
+    }
+    function readCookie() {
+      let cook = document.cookie;
+      let cookArr = cook.split(";");
+      let isFind = false;
+
+      let searchName = "2minCookie";
+      for(let i in cookArr) {
+        let cookName = cookArr[i].split("=")[0].trim();
+        console.log(cookName);
+      
+        if(cookName == searchName) {
+          alert("찾았다" + cookArr[i].split("=")[1]);
+          isFind = true;
+        }
+      }
+      if(!isFind) {
+        alert("그런 쿠키없음");
+      }
+    }
+    function delCookie() {
+      let now = new Date();
+      let delCookie = "myCookie=;expires="+now.toUTCString();
+      document.cookie = delCookie;
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="쿠키저장" onclick="saveCookie();">
+  <input type="button" value="쿠키읽기" onclick="readCookie();">
+  <input type="button" value="쿠키삭제" onclick="delCookie();">
+</body>
+</html>
