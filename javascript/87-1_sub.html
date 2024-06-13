@@ -9,15 +9,9 @@
     function closePopup() {
       let check = document.getElementById("check").checked
       if(check) {
-        let expire = new Date();
-        expire.setDate(expire.getDate() + 1);
-        addCookie("ddd","Y", expire.toUTCString());
-        addCookie("popup","Y", expire.toUTCString());
-        addCookie("eee","Y", expire.toUTCString());
-        window.close();
-      }else {
-        window.close();
+        addCookie("popup","Y", 1);
       }
+      window.close();
     }
   </script>
 </head>

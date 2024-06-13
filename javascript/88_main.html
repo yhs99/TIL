@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function send() {
+      let base = document.querySelector("#base").value;
+      let height = document.querySelector("#height").value;
+      
+      location.href = encodeURI(`./88-1_sub.html?base=${base}&height=${height}`);
+    }
+  </script>
+</head>
+<body>
+  <div>밑변 : <input type="text" id="base"></div>
+  <div>높이 : <input type="text" id="height"></div>
+  <div><button onclick="send()">전송</button></div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./common.js"></script>
+  <title>Document</title>
+  <script>
+    window.onload = () => {
+      let span = document.querySelectorAll("span");
+      console.log(getParam(""));
+      span[0].textContent = getParam("name").value;
+      span[1].textContent = getParam("korean").value;
+      span[2].textContent = getParam("english").value;
+      span[3].textContent = getParam("math").value;
+    }
+  </script>
+</head>
+<body>
+  <h1>Score V6 !</h1>
+  이름 : <span></span>
+  국어 : <span></span>
+  영어 : <span></span>
+  수학 : <span></span>
+</body>
+</html>
