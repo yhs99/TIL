@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./jquery-3.7.1.min.js"></script>
+  <title>jQuery를 이용해 태그를 탐색 및 조작 해보자.</title>
+  <script>
+    $(() => {
+      $("#list1 li:even").css("background-color", "red");
+      $("#list1 li:odd").css("background-color", "yellow");
+      $("#list1 li:first").css("color", "yellow");
+
+      $("#list1 li").eq(2).css("font-style", "italic");
+
+      // find()
+      $("#list2 li").find("a").css("text-decoration", "none");
+
+      console.log($(".title").html());
+
+      // 속성접근
+      console.log($("ul").eq(0).attr("name", "ttt"))
+      console.log($("#list2 li").eq(1).attr("class"));
+      
+      $("#list1 li").eq(0).attr("class","newClass");
+      $(".newClass").text("dd")
+      $("#list3").append("<li>append</li>");
+      $("#list3").prepend("<li>prepend</li>");
+      $("#list3").after("<li>after</li>");
+
+      $("<li>새li</li>").insertBefore("#list3 li:eq(4)")
+
+      $("#btn1").click(() => {
+        $("#div1").remove();
+      });
+
+      $("#btn2").click(() => {
+        $("#div2").empty();
+      })
+    });
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <h1>탐색 및 조작</h1>
+    <h2>탐색을 위해 css3 선택자를 이용한다</h2>
+    <h3>list 1</h3>
+    <ul id="list1">
+      <li>리스트1</li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+      <li>리스트4</li>
+      <li>리스트5</li>
+      <li>리스트6</li>
+      <li>리스트7</li>
+    </ul>
+
+    <ul id="list2">
+      <li>리스트8</li>
+      <li class="list9">리스트9</li>
+      <li>리스트10</li>
+      <li>리스트11</li>
+      <li><a href="#">리스트12</a></li>
+      <li>리스트13</li>
+      <li><span><a href="#">링크</a>리스트14</span></li>
+    </ul>
+
+    <h2 class="title">html 조작</h2>
+    <ul id="list3">
+      <li>리스트_1</li>
+      <li>리스트_2</li>
+      <li>리스트_3</li>
+      <li>리스트_4</li>
+      <li>리스트_5</li>
+      <li>리스트_6</li>
+      <li>리스트_7</li>
+    </ul>
+  </div>
+  <hr>
+  <div>
+    <button id="btn1">remove div1</button>
+    <div id="div1" style="height: 100px; width: 300px; border:1px solid black; background-color:yellow;">
+      <p>paragraph1</p>
+      <p>paragraph2</p>
+    </div>
+    <hr>
+    <button id="btn2">remove div2</button>
+    <div id="div2" style="height: 100px; width: 300px; border:1px solid black; background-color:yellow;">
+      <p>paragraph1</p>
+      <p>paragraph2</p>
+    </div>
+  </div>
+</body>
+</html>

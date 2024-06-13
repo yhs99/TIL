@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(() => {
+      console.log($("h1").css("color", "blue"));
+      $("div").click(function () {
+        $(this).html("hi");
+      })
+    });
+  </script>
+</head>
+<body>
+  <h1>Hello, jQuery</h1>
+  <h2>첫번째 h2</h2>
+  <h2>두번째 h2</h2>
+  <div>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt atque iure, rerum in nobis nemo eum nostrum tenetur consequatur voluptate placeat ipsum voluptatum voluptatem accusamus totam provident? Doloremque, ea corporis.
+  </div>
+  <div>
+    <img src="../htmlpractice/images/cat.jpg">
+  </div>
+</body>
+</html>
