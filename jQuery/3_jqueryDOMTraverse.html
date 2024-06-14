@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(() => {
+      console.log($("#id5").prev()); // previousSibling
+      console.log($("#id5").next()); // nexSibling
+
+      console.log($(".tr td").eq(0).parent().next().html())
+      
+      // 1번 배경색 노랑으로 바꾸기
+      $(".tr td:first").css("background-color", "yellow");
+
+      $('table').eq(0).css("width", "200px");
+
+      //5번 5글자 앞에 a라는 글자를 진하게 넣기
+      $("#td5").prepend("<strong>a</strong>");
+
+      // 9번의배경색을 파란색으로 바꾸고, 글자색은 하얀색으로 8번을 100으로 변경
+      $("#td9").css({"background-color" : "blue", "color" : "white"}).prev().html("100");
+    })
+  </script>
+</head>
+<body>
+  <table border="1">
+    <tr class="tr">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr class="tr">
+      <td>4</td>
+      <td id="td5">5</td>
+      <td>6</td>
+    </tr>
+    <tr class="tr">
+      <td>7</td>
+      <td>8</td>
+      <td id="td9">9</td>
+    </tr>
+  </table>
+</body>
+</html>
