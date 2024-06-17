@@ -215,6 +215,12 @@
 ├─ jQuery
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/1_helloJQuery">1_helloJQuery</a>
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/2_jQueryDOMManipulation">2_jQueryDOMManipulation</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/3_jqueryDOMTraverse">3_jqueryDOMTraverse</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/4_jQueryEach">4_jQueryEach</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/5_ex%20copy">5_ex copy</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/5_ex1">5_ex copy</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/6_dynamicTable">6_dynamicTable</a>
+│  ├─ <a href="https://yhs99.github.io/goott/jQuery/7_sideMenu">7_sideMenu</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme">jQuery정리.md</a>
 └─ readme.md
 </pre>
