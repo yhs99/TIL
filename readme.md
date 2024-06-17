@@ -221,6 +221,10 @@
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/5_ex1">5_ex copy</a>
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/6_dynamicTable">6_dynamicTable</a>
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/7_sideMenu">7_sideMenu</a>
-│  └─ <a href="https://yhs99.github.io/goott/javascript/readme">jQuery정리.md</a>
+│  └─ <a href="https://yhs99.github.io/goott/javascript/readme.md">jQuery정리.md</a>
+├─ jQuery
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/1_validate">1_validate</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/1-1_sub">1-1_sub</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/readme.md">frontend 정리.md</a>
 └─ readme.md
 </pre>
