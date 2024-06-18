@@ -225,9 +225,20 @@
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/6_dynamicTable">6_dynamicTable</a>
 │  ├─ <a href="https://yhs99.github.io/goott/jQuery/7_sideMenu">7_sideMenu</a>
 │  └─ <a href="https://yhs99.github.io/goott/javascript/readme.md">jQuery정리.md</a>
-├─ jQuery
+├─ frontend
 │  ├─ <a href="https://yhs99.github.io/goott/frontend/1_validate">1_validate</a>
 │  ├─ <a href="https://yhs99.github.io/goott/frontend/1-1_sub">1-1_sub</a>
-│  ├─ <a href="https://yhs99.github.io/goott/frontend/readme.md">frontend 정리.md</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/2_slick">2_slick</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/3_toast">3_toast</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/4_chart">4_chart</a>
+│  ├─ <a href="https://yhs99.github.io/goott/frontend/5_googleChartScore">5_googleChartScore</a>
+├─ ajax
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/0_intro">0_intro</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/1_helloAjax">1_helloAjax</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/2_jqueryAjax">2_jqueryAjax</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/3_ajaxXML">3_ajaxXML</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/4_ajaxJSON">4_ajaxJSON</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/5_ajaxXML_News">5_ajaxXML_News</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/readme.md">ajax 정리.md</a>
 └─ readme.md
 </pre>

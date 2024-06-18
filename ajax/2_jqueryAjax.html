@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    function txtLoad() {
+      $.ajax({
+        url : "http://goott01.cafe24.com/heesung/hello.txt",
+        type : "GET",
+        dataType : "text",
+        success: function (data) {
+          $("#output").html(data);
+          console.log("ajax success");
+        },
+        error: function(error) {
+          $("#output").html(error);
+          console.log("ajax has been error");
+        },
+        complete: function() {
+          console.log("ajax done");
+        }
+      })
+    }
+  </script>
+</head>
+<body>
+  <button onclick="txtLoad()">전송</button>
+  <div id="output"></div>
+</body>
+</html>

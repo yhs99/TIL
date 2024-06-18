@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비동기 통신</title>
+  <script>
+    function txtLoad() {
+      let xhr = new XMLHttpRequest(); // ajax 객체생성
+      if(xhr != null) {
+        xhr.onreadystatechang = function() {
+          document.getElementsByTagName("p")[0].append(xhr.readyState);
+        }
+        if(this.readyState == 4 && this.status == 200) {
+          document.getElementById("output").innerHTML = this.responseText;
+        }
+      }else {
+        alert("웹 브라우저가 비동기 통신을 지원하지 않습니다.");
+      }
+      
+      xhr.open("get", "http://goott01.cafe24.com/heesung/hello.txt");
+      xhr.send();
+    }
+  </script>
+</head>
+<body>
+  <button onclick="txtLoad()">로드</button>
+  <p></p>
+  <div id="output"></div>
+</body>
+</html>
