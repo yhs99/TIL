@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>비동기통신 방식으로 XML 출력하기</title>
+  <script>
+    function txtLoad() {
+      $.ajax({
+        url : "http://goott01.cafe24.com/heesung/account.xml",
+        type : "GET",
+        dataType : "xml",
+        success: function (data) {
+          let account = data.getElementsByTagName("account");
+          let output = "<table border='1'>"
+              output += `<tr><th>예금주</th><th>계좌번호</th><th>잔액</th><th>예금명</th><th>은행</th></tr>`
+              $.each(account, function(i, acc) {
+                console.log(acc);
+                output += `
+                  <tr>
+                    <td>${$(acc).children().eq(0).html()}</td>
+                    <td>${$(acc).children().eq(1).html()}</td>
+                    <td>${$(acc).children().eq(2).html()}</td>
+                    <td>${$(acc).children().eq(3).html()}</td>
+                    <td>${$(acc).children().eq(4).html()}</td>
+                  </tr>
+                `
+              })
+                output+="</table>"
+
+                $("#output").html(output);
+        },
+        error: function(error) {
+          $("#output").html(error);
+          console.log("ajax has been error");
+        },
+        complete: function() {
+          console.log("ajax done");
+        }
+      })
+    }
+  </script>
+</head>
+<body>
+  <input type="button" value="로딩" onclick="txtLoad()">
+  <div id="output"></div>
+</body>
+</html>
