@@ -11,10 +11,10 @@
     // ajax로 기사를 xmll로 받아와서
     // bootstrap5의 Accordion으로 각 기사를 출력한다.
     // (링크, 뉴스 날짜)도 포함
-    let responseData = "";
-    let datas = [];
+    // 검색은 엔터를 누를시 작동해야함
+    var datas = [];
 
-    function Newses(title, link, guid, description, pubDate, author, category) {
+    function News(title, link, guid, description, pubDate, author, category) {
       this.title = title; //기사제목
       this.link = link; ///기사링크
       this.guid = guid;//기사링크
@@ -35,7 +35,7 @@
         type: "get",
         dataType: "xml",
         success: function(response) {
-          responseData = response.getElementsByTagName("channel");
+          let responseData = response.getElementsByTagName("channel");
           let news = $(responseData).find("item");
           $(news).each(function(i, e) {
             let title = replaceCDATA($(e).find("title").html());
@@ -45,19 +45,20 @@
             let pubDate = new Date($(e).find("pubDate").html()).toLocaleDateString();
             let author = $(e).find("author").html();
             let category = replaceCDATA($(e).find("category").html());
-            let data = new Newses(title, link, guid, description, pubDate, author, category);
-            datas.push(data);
+            datas.push(new News(title, link, guid, description, pubDate, author, category));
           })
           renderNews(datas);
         },
-        error: function(error) {
-          console.log("error occ");
+        error: function(error, textStatus) {
+          console.log("error occured :" , error.status, textStatus);
         }
       });
     }
 
     function renderNews(data, query="") {
       let template = ``
+      let searchFirst=-1;
+      let isFind = false;
       if(!query) {
         data.forEach((e, i) => {
           template += `
@@ -68,15 +69,19 @@
                   <span class="text-start fw-bold">
                     ${e.title}
                   </span>
-                  <span class="fw-lighter">
+                  <small class="fw-lighter">
                       ${e.pubDate}
-                  </span>
+                  </small>
+                    <small class="fw-lighter">
+                        ${e.author}
+                    </small>
                 </a>
               </div>
               <div id="${i}" class="collapse ${i == 0 ? 'show' : ''}" data-bs-parent="#accordion">
                 <div class="card-body">
                   <a href="${e.link}">
                     ${e.description}
+                    <div class="text-end">${e.pubDate}</div>
                   </a>
                 </div>
               </div>
@@ -84,7 +89,9 @@
           })
       }else {
         data.forEach((e, i) => {
-          if(!e["title"].indexOf(query)) {
+          if(e["title"].indexOf(query) > -1 || e["description"].indexOf(query) > -1) {
+            isFind = true;
+            if(searchFirst==-1) searchFirst = i;
             template += `
               <div class="card">
                 <div class="card-header">
@@ -93,12 +100,15 @@
                     <span class="text-start fw-bold">
                       ${e.title}
                     </span>
-                    <span class="fw-lighter">
-                        ${e.pubDate}
-                    </span>
+                    <small class="fw-lighter">
+                      ${e.pubDate}
+                    </small>
+                    <small class="fw-lighter">
+                      ${e.author}
+                    </small>
                   </a>
                 </div>
-                <div id="${i}" class="collapse ${i == 0 ? 'show' : ''}" data-bs-parent="#accordion">
+                <div id="${i}" class="collapse ${i == searchFirst ? 'show' : ''}" data-bs-parent="#accordion">
                   <div class="card-body">
                     <a href="${e.link}">
                       ${e.description}
@@ -108,6 +118,7 @@
               </div>`
             }
           })
+        if(!isFind) template = "<div>해당 검색어의 기사가 없습니다.</div>"
       }
       $("#accordion").html(template);
     }
