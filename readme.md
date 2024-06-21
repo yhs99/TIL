@@ -239,6 +239,7 @@
 │  ├─ <a href="https://yhs99.github.io/goott/ajax/3_ajaxXML">3_ajaxXML</a>
 │  ├─ <a href="https://yhs99.github.io/goott/ajax/4_ajaxJSON">4_ajaxJSON</a>
 │  ├─ <a href="https://yhs99.github.io/goott/ajax/5_ajaxXML_News">5_ajaxXML_News</a>
+│  ├─ <a href="https://yhs99.github.io/goott/ajax/6_ajaxWeather">6_ajaxWeather</a>
 │  ├─ <a href="https://yhs99.github.io/goott/ajax/readme.md">ajax 정리.md</a>
 └─ readme.md
 </pre>
