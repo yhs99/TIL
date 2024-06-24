@@ -80,6 +80,7 @@
     
     function displayImages(items) {
       let template = "";
+      let indicator = ``;
       let images = items.item
       if(!items) {
         template = `
@@ -89,13 +90,17 @@
         `
       } else {
         for(let i in images) {
+          indicator += `
+            <button type="button" data-bs-target="#carouselExampleControls" data-bs-slide-to="${i}" class="${i == 0 ? 'active' : ''}"></button>
+          `;
           template += `
             <div class="carousel-item ${i == 0 ? 'active' : ''}">
-              <img src="${images[i].originimgurl}" class="d-block img-fluid w-100" alt="...">
+              <img src="${!items ? "./images/no-image.png" : images[i].originimgurl}" class="d-block img-fluid w-100" alt="...">
             </div>
           `
         }
       }
+      $('.carousel-indicators').html(indicator);
       $('.carousel-inner').html(template);
     }
 
@@ -174,6 +179,9 @@
         <!-- !! -->
         <div class="col text-end m-4">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            
+            </div>
             <div class="carousel-inner">
               
             </div>
@@ -191,14 +199,14 @@
       </div>
     </div>
     <div class="container mt-5 container-design">
-      <div class="load text-center align-middle">
-        <div class="spinner-border"></div>
-      </div>
         <div class="content text-start">
         </div>
     </div>
     <div class="container mt-4" style="width: 80%; text-align: center;">
       <div id="map" style="width: 100%; height: 350px;"></div>
+    </div>
+    <div class="load text-center align-middle">
+      <div class="spinner-border"></div>
     </div>
   <div class="mt-5 p-4 bg-dark text-white text-center">
     <p>Footer</p>

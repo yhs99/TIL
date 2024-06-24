@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>encode, decode</title>
+  <script>
+    let url = "https://www.naver.com?q=날씨";
+    document.write(`원래 문자열 : ${url} <br>`);
+    document.write(`인코딩 문자열 : ${encodeURI(url)} <br>`);
+    document.write(`인코딩 문자열 : ${decodeURI(encodeURI(url))} <br>`);
+    document.write(`인코딩 문자열 : ${encodeURIComponent(url)} <br>`);
+    document.write(`인코딩 문자열 : ${decodeURIComponent(encodeURI(url))} <br>`);
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
