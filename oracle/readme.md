@@ -124,3 +124,117 @@ SELECT 연습문제
 12. 사번, 이름, 급여를 급여가 높은 순으로 출력하세요
 13. 입사일이 가장 최근 순으로 사번, 이름, 입사일을 출력하세요
  ```
+
+ # DB 03. JOIN 
+ ## 조인의 종류
+   1. 조인의 종류
+      - Cross Join(교차조인) : 의미없는 조인 단순하게 두개 이상의 테이블을 곱연산 결과를 냄
+      - Equi Join(동등 조인) : 조인 대상이 되는 테이블에서 공통적으로 존재하는 컬럼을 연결("=")하여 결과를 생성하는 조인
+      - Non-Equi Join(비동등 조인) : 조인할 테이블 사이의 컬럼값이 직접적으로 일치하지 않을 때 사용하는 조인("=" 연산자를 제외한 연산자를 사용한다)
+      - Outer Join(외부 조인) : 조인 조건에 만족하지 않는 행들도 나타내기 위해 사용하는 조인
+      - Self Join : 하나의 테이블에서 조인을 하여 원하는 데이터를 얻는 조인인
+ ## 조인의 조건
+   1. primary key (기본키)와 foreign key(외래키)컬럼을 통해 서로 다른 테이블을 연결한다.
+   2. where 절을 사용하여 조인조건을 기술한다. 조인조건 갯수 = 테이블의 수-1
+   3. 명확성을 위해 컬럼명 앞에 테이블 명 또는 별칭을 기술한다.
+
+## ANSI Join
+   - Cross Join
+   - Inner Join : Equi join과 동일
+      - Join 조건을 where절이 아닌 on 절에 기술한다. (일반 조건은 where절에 기술)
+      - using (조인할컬럼명) : 조인이 되는 컬럼명이 동일해야 하고, 조인할 컬럼에 대해서 테이블 별칭을 사용할 수 없음
+      - natural join : 조인이 되는 컬럼명은 동일해야 한다. DBMS가알아서 테이블을 살펴보고 동일한 컬럼으로 inner join 진행.
+      동일한 컬럼이 2개 이상일 경우 and 연산을 이용해 join한다.
+   - Outer Join
+      - left outer join, right outer join, full outer join
+
+ ## ERD (Entity Relationship Diagram)
+ :Entity(개체 : DB에서 데이터화 하려는 개념 ex. 테이블)
+
+
+ ### 1) 개념적 ERD
+<img src="https://velog.velcdn.com/images/mong9_s/post/89758ac3-c523-483b-90a6-ccee89801be8/image.PNG"/>
+<img src="https://velog.velcdn.com/images/mong9_s/post/230a59fb-2293-46f3-8832-1df0c3ae9d26/image.PNG">
+
+ ### 2) 공학적 ERD
+ <img src="image.png">
+
+
+
+
+# DB 04. SQL문의 종류
+   - DDL (Data Definition Language) : 데이터베이스 객체(테이블, 인덱스, 뷰, 시퀀스, 동의어 등)를 생성, 수정, 삭제하는 명령문들
+   <br> ex) create, alter, drop, truncate, renameto
+
+   - DCL(Data Control Language) : 데이터베이스를 제어하기 위한 명령문들<br>
+   ex) commit (영구히 보존), rollback (되돌리기), savepoint
+
+   - DML (Data Manipulate Language) : 데이터베이스의 데이터를 추가, 수정, 삭제하는 명령문들<br>
+   ex) insert into, update set, delete from
+
+## 1. DDL문
+   1. Create table로 테이블의 구조를 정의
+      ```SQL
+         CREATE TABLE 테이블명(
+            컬럼명1 데이터타입,
+            컬럼명2 데이터타입,
+            ...
+         )
+      ```
+   2. alter table 테이블명
+      1) add 컬럼명 데이터타입
+      2) modify 컬럼명 데이터타입
+      3) drop 컬럼명
+      4) rename 컬럼명 to 새컬럼명
+   3. truncate table
+   4. rename 테이블명 to 새테이블명
+   5. drop table
+
+## 2. DML
+   - insert into 테이블명([컬럼명]) values(. . .);
+   - update 테이블명 set 컬럼명 = 값, . . . [where 조건식];
+   - delete from 테이블명 [where 조건식];
+
+truncate vs delete
+: truncate는 DDL(데이터 정의어)이기 때문에 rollback이 되지않고
+delete는 DML문으로 rollback이 가능하다.
+
+## ORACLE 데이터 베이스의 자료형(DATATYPE)
+| 이름  | 설명  |
+|---|---|
+|char(size) |고정길이 문자데이터. 입력된 자료 길이와 상관없이 정해진 길이만큼 저장영역을 차지함. |
+|varchar2(size)|최대 4096byte. 가변길이 유니코드 문자(국가별 문자세트) 데이터.|
+|date|날짜형식을 저장하기 위해 사용하는 자료형<br>(BC4712 1월1일 ~ AD 4712년 12월31일 까지)|
+|nvarchar2(size)|4096byte. 가변길이 유니코드 문자(국가별 문자세트) 데이터|
+|number (w,d)|w는 전체길이, d는 소숫점 이하 자릿수. 최대길이 w=38자리|
+|blob|최대 크기 4GB의 대용량 이진 데이터를 저장. binary|
+|clob|최대 크기 4GB의 대용량 텍스트 데이터를 저장.|
+
+
+# DB 05. 제약조건 (constraints)
+: 데이터가 추가, 수정, 삭제될 때, 데이터의 무결성을 지키기 위해 컬럼 단위로 주어지는 조건
+
+## 제약조건의 종류
+종류         |설명 
+------------|---------------------------------------------
+not null    | null을 허용하지 않는다.
+unique      | 중복된 값을 허용하지 않는다. 항상 유일한 값을 가져야 한다.
+primary key | not null + unique
+foreign key | 참조되는 테이블의 컬럼값이 존재해야 입력할 수 있다.
+
+
+## 제약조건과 cascade | set null 옵션
+: 두 테이블을 연결해서 부모테이블의 행(pk를 가지고 있는 쪽)을 삭제할 때, 그 부모테이블을 참조하는 다른 테이블의 행을 동시에 삭제되도록 하거나 (on delete cascade), 다른 테이블의 행의컬럼을 null로 변경 (on delete set null) 하는 것이다.
+
+```SQL
+CREATE TABLE 테이블명(
+   컬럼1 데이터타입 1,
+   .... ,
+   제약조건 on delete cascade | on delete set null
+);
+```
+
+### 제약조건 연습문제
+<img src="./1.png">
+<img src="./2.png">
+<img src="./3.png">
