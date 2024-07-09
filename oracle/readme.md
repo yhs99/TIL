@@ -5,6 +5,8 @@
 - [DB 05. 제약조건](#db-05-제약조건-constraints)
 - [DB 06. 데이터모델링](#db-06-datamodeling)
 - [DB 07. 뷰](#db-07-view)
+- [DB 08. 시퀀스-인덱스](#db-08-시퀀스--인덱스)
+- [DB 09. DCL](#db-09-dcl-data-control-language)
 # DB 01. install Oracle
 
 ```
@@ -342,3 +344,22 @@ CREATE TABLE 테이블명(
 
 # DB 08. 시퀀스 / 인덱스
    시퀀스(Sequence): 순차적으로 증가하여 중복된 값이 없도록 만들어 주는 오라클 객체
+
+# DB 09. DCL (Data Control Language)
+: 데이터 무결성을 지키기 위해서 트랜잭션 처리
+   - 트랜잭션 (transaction) : 데이터베이스에서 데이터를 처리하는 논리적인 작업의 단위
+<br>: 계좌이체의 일련의 과정들이 하나의 묶음으로 처리 되어야 한다. 혹시 중간에 무슨 문제가 발생한다면, 진행되던 인출과정을 전체를 취소하고 처음부터 시작해야 하기 때문. ACID - A(원자성) - All or Nothing
+
+   - commit : 데이터베이스에 트랜잭션 작업내용을 영구히 저장한다.
+   - rollback : 트랜잭션의 작업 내용을 취소, 이전 commit한 곳까지만 복구
+   - savepoint : 하나의 트랜잭션에서 소단위 작업을 저장할 때
+
+   ## 자동 commit이 되는 경우
+      - 오라클이 정상 종료될 때
+      - DDL (create, alter, drop, truncate, rename)문이 수행된 후.
+   
+   ## 자동 rollback이 되는 경우
+      - 오라클이 비정상 종료되거나 컴퓨터가 shutdown되었을 때
+
+# 2차 프로젝트
+![alt text](image-1.png)
