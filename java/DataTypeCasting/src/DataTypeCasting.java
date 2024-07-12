@@ -34,5 +34,27 @@ public class DataTypeCasting {
 		int intNum2 = 2;
 		float divNum1 = (float) intNum1 / intNum2;
 		System.out.println(divNum1);
+		
+		// 문자열 변환
+		int result3 = 1 + 2+ 3;
+		System.out.println("result3 = " + result3); // 6
+		
+		String result4 = 1+2+"3";
+		System.out.println("result4 = " + result4); // 33
+		
+		String result5 = "1"+2+3;
+		System.out.println("result4 = " + result5); // 123
+		
+		String result6 = "1"+(2+3);
+		System.out.println("result4 = " + result6); // 15
+		
+		// 문자열 => 숫자
+		int a = Integer.parseInt(result6);
+		System.out.println(a);
+		
+		// 숫자 => 문자열
+		String str1 = Integer.toString(a);
+		System.out.println(str1);
+		
 	}
 }
