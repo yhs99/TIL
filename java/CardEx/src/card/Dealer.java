@@ -1,5 +1,6 @@
 package card;
 
+
 public class Dealer {
 	private static Card[] cards;
 	
@@ -45,6 +46,7 @@ public class Dealer {
 			System.out.println("카드를 먼저 개봉하세요");
 			return;
 		}
+		
 		for(Card card : cards) {
 			System.out.printf("%s  ::  카드가 지급되었습니다. \n", card.getCard());
 		}
