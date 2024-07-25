@@ -9,10 +9,14 @@ import emp.Employee;
 public class Dept {
 	private String deptName;
 	private List<Employee> employees;
-	
+
 	protected Dept(String deptName) {
 		this.deptName = deptName;
 		employees = new ArrayList<Employee>();
+	}
+	
+	public List<Employee> empListEx() {
+		return employees;
 	}
 	
 	public String getDeptName() {

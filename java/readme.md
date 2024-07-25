@@ -402,6 +402,17 @@ final|클래스|변경될 수 없는 클래스, 확장될 수 없는 클래스�
   - static final 붙여서 사용
   - 대문자로 사용하고 ( _ )를 사용하여 단어를 구분한다.
 
+## abstract - 추상의, 미완성의
+메서드의 선언부만 작성하고, 실제 수행내용은 구현하지 않은 추상메서드를 선언하는데 사용된다.
+그리고 클래스에 사용될 경우 클래스 내에 추상메서드가 존재한다는 것을 알 수도 있다.
+
+## 제어자 조합시 주의점
+- 메서드에 static과 abstract는 함께 사용 불가능하다
+- 클래스에 abstract와 final는 함께 사용 불가능하다.
+- abstract 메서드의 접근제어가 private일 수 없다.
+- 메서드에 private과 final을 같이 사용할 필요가 없다.
+<br><br><br>
+
 # JAVA 05. 객체지향 프로그래밍 part.2
 part2에서는 객체지향 프로그래밍을 해서 얻는 이점이 무엇인지 대해서 공부한다.<br>
 클래스간의 관계
@@ -499,3 +510,52 @@ Book, Movie, Album
 > 정규직 사원에게는 기본급을 지급하고, <br>
 > 알바직 사원에게는 시간당 급여 (= 급무시간 * 시급)를 지급한다.<br>
 > 다형성과 상속관계를 이용해서 구현하기
+
+# 인터페이스 ( Interface )
+```Java
+public class Tv {
+	
+	private String brandName;
+	
+	Tv(String brandName) {
+		this.brandName = brandName;
+	}
+	
+	public void powerOn() {
+		System.out.println(brandName + " TV ON");
+	}
+	
+}
+
+public class Remote {
+
+	private Tv tv;
+	
+	public Remote() {
+		this.tv = new Tv("SAMSUNG");
+	}
+
+	public void turnOnTv() {
+		tv.powerOn();
+	}
+	
+}
+
+public class RemoteMain {
+	
+	public static void main(String[] args) {
+		Remote remote = new Remote();
+		remote.turnOnTv();
+	}
+}
+```
+### 위 코드의 문제점
+1. 리모컨이 TV를 가지고 있다(has-a 관계): has-a관계가 아님에도, 리모컨으로 TV Power를 켜야해서 TV객체를 가지고 있다고 표현함.
+2. TV는 리모컨이 없으면 동작할 수 없음. -> 리모컨이 없어지면 TV도 같이 없어진다.
+3. TV 클래스를 수정하면 Remote 클래스도 수정해야 한다.
+4. 이 리모컨을 TV만 제어 가능하다.
+
+### webhssy.loosecoupling <br>
+전자제품(power를 가지고 있는 제품) ElectronicDevice라는 인터페이스를 만들고, 그 인터페이스를 상속받아 Tv,Washer를 구현하였다. 전자제품을 제어할 수 있는 리모컨은 void remoteControl(ElectrnicDevice ed)만 구현하면 리모컨이 되도록 인터페이스를 구현하였다.
+<br>
+-> 하나의 리모컨은 모든 전자제품을 제어할 수 있게 되었고, Remotable을 상속받은 다른 기기(스마트폰)가 있다면 그 기기도 전자제품을 제어할 수 있도록 구현한 것이다.
