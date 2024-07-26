@@ -26,10 +26,9 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          fields: workflow,job,commit,repo,author,took,ref
           author_name: ${{ github.actor }}
           text: >
-            Issue Title: ${{ github.event.issue.title }}
-            Issue Body: ${{ github.event.issue.body }}
+            이슈 제목: ${{ github.event.issue.title }} \n
+            이슈 내용: ${{ github.event.issue.body }}
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
