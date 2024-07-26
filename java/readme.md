@@ -4,6 +4,7 @@
 - [JAVA 4. 자바 배열](#java-04-배열-array)
 - [JAVA 5. 자바 객체지향 프로그래밍 p.1](#java-05-객체지향-프로그래밍-part1)
 - [JAVA 5. 자바 객체지향 프로그래밍 p.2](#java-05-객체지향-프로그래밍-part2)
+- [JAVA 6. 예외처리 (Exception)](#java-06-예외처리-exception)
 
 # Java 01. 자바 설치
 <pre>
@@ -559,3 +560,65 @@ public class RemoteMain {
 전자제품(power를 가지고 있는 제품) ElectronicDevice라는 인터페이스를 만들고, 그 인터페이스를 상속받아 Tv,Washer를 구현하였다. 전자제품을 제어할 수 있는 리모컨은 void remoteControl(ElectrnicDevice ed)만 구현하면 리모컨이 되도록 인터페이스를 구현하였다.
 <br>
 -> 하나의 리모컨은 모든 전자제품을 제어할 수 있게 되었고, Remotable을 상속받은 다른 기기(스마트폰)가 있다면 그 기기도 전자제품을 제어할 수 있도록 구현한 것이다.
+
+
+# JAVA 06. 예외처리 (Exception)
+## 1. 프로그래밍에서의 오류
+  1. 컴파일 오류 (compile error) : 실행하기 전에 나는 에러. 보통 프로그래머가 문법을 잘 못 사용하였을 때 나는 오류. 실행되기 전에 디버깅 되어야 하는 오류이다
+  2. 런타임 오류(run-time error) : 프로그램이 실행될 때 발생하는 오류(발생할 수도 있고, 안 할 수도 있는 오류)
+  3. 논리적 에러 : 작성 의도와 다르게 동작하는 오류
+  
+
+
+## 2. 예외 계층구조
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+## 3. 예외 처리  구문
+### 1) try ~ catch ~ [finally]
+```Java
+  try{
+    //예외 발생 가능성 문장
+  }catch(발생 예외 객체1 e) {
+    // 발생 예외 객체1 발생시 수행 문장
+  }catch(발생 예외 객체2 e) {
+    // 발생 예외 객체2 발생시 수행 문장
+  }catch(Exception e){ 
+    //예외1,2 이외의 모든 예외 발생시 수행 문장
+  }[ finally {
+    // try catch 이후 무조건 수행할 문장
+  } ]
+```
+
+## 사용자 정의 예외 클래스
+: 자바에서 예외(Exception)으로 정의되진 않았지만, 프로그램 자체에서 어떤 규칙에 따라서 (ex. 음수나 0을 입력하면 예외발생) 프로그래머가 직접 예외클래스를 만들 수 있다.
+- 예외 클래스는 보통 Exception 클래스로부터 상속받아 구현 가능하다.
+- 만들어진 사용자 정의 예외 클래스를 발생시키고자 할 때 throw구문을 사용한다.
+
+```Java
+try {
+  throw 발생_시키고싶은_예외객체;
+}catch (발생_시킨_예외객체 처리) {
+8
+}
+```
+
+## throws 구문으로 예외 미루기
+예외가 발생한 곳이 아닌 예외가 발생된 메서드를 호출한 곳에서 예외를 처리하도록 미루는 문법
+```Java
+접근제어자 반환타입 메서드명() throws 예외1, 예외2, 예외3 ...{
+
+}
+```
+
+## try-with-resource 구문
+주로 IO(입출력)와 관려뇐 클래스를 사용할 때 유용하게 쓸 수 있는 구문.
+```Java
+try(FileInputStream fis = new FileInputStream("경로");
+    DataInputStream dis = new DataInputStream(fis)) {
+
+    }catch (IOException e) {
+      System.out.println("파일이 없습니다.");
+    }
+```
