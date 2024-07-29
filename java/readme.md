@@ -622,3 +622,35 @@ try(FileInputStream fis = new FileInputStream("경로");
       System.out.println("파일이 없습니다.");
     }
 ```
+
+# JAVA 07. 컬렉션 (Collection)
+: 다수의 데잍터를 쉽게 관리, 처리할 수 있는 표준화된 방법들을 제공하는 클래스들을 묶어서 자바에서는 컬렉션(Collection)이라고 한다.
+
+## 컬렉션 프레임워크의 핵심 인터페이스의 특징
+인터페이스|특징|주요 구현 클래스
+----|----|----
+List|순서가 있는 데이터의 집합, 데이터의 중복 허용|ArrayList, LinkedList, Stack, Vector, Queue 등
+Set|순서를 유지 하지 않는 데이터의 집합, 데이터의 중복을 허용하지않음|HashSet, TreeSet(정렬기능) 등
+Map|키(key)와 값(value)의 쌍으로 데이터를 관리. 순서는 유지되지 않으며, 키는 중복을 허용하지 않고, 값은 중복을 허용한다.|HashMap, TreeMap, HashTable
+
+## Collection 주요 멤버
+![alt text](image-2.png)
+
+## 제네릭스 Genrics
+- Generic 타입: 내부에서 사용할 타입을 외부에서 주입하는 것.
+- Generic 타입을 사용하는 이유: 컬렉션의 객체들은 그냥 생성하면 raw 타입이되어 Object타입의 데이터를 관리하게 된다. raw타입을 사용하는 것보다 특정 타입을 지정해 주어서 그 타입의 데이터만 관리하는 것이 좋다.
+  - Box-Unboxing 의 부하를 줄일 수 있다.
+  - 데이터의 안정성 (Type Safety)을 보장하기 때문.
+
+## LinkedList
+```
+ArrayList vs LinkedList
+순차적인 추가, 삭제, 접근은 ArrayList가 더 빠름.
+중간에서부터의 추가, 삭제, 접근은 LinkedList가 더 빠름.
+```
+
+## Stack
+:LIFO(Last In First Out) 후입선출
+
+## Queue
+:FIFO(First In First Out) 선입선출
