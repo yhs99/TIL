@@ -654,3 +654,46 @@ ArrayList vs LinkedList
 
 ## Queue
 :FIFO(First In First Out) 선입선출
+
+
+### 주민등록번호 예제
+대한민국 국민(Korean)이라는 객체를 Set에 넣어 관리하려고 한다.
+- 국민은 주민등록번호와 이름을 가지고 있다.
+- 주민등록번호와 이름이 같으면 같은 국민으로 본다.
+
+## ✨ HashSet의 중복비교 방법
+Set의 add()메서드가 중복값을 비교하는 방법은 기존 값의 hashCode()값을 비교하고 같은 값이 있다면 equals()를 호출하여 한번 더 비교한다.<br>
+객체의 중복을 체크하기 위해선 hashCode와 equals의 메소드를 Override해주어야 한다.
+```Java
+// 주민등록 번호와 이름이 같을 경우 같은 객체로 판단한다.
+@Override
+public int hashCode() {
+  String identify = this.name + this.regNo;
+  return identify.hashCode();
+}
+
+@Override
+public boolean equals(Object obj) {
+  if(obj instanceof Korean) {
+    Korean a = (Korean) obj;
+    return (a.getName().equals(this.name) && 
+        a.getRegNo().equals(this.regNo));
+  }
+  return false;
+}
+
+```
+
+## Comparable vs Comparator
+- Comparable 인터페이스 (java.lang 패키지) : 기본 정렬 기준을 구현할 때 사용
+- Comparator 인터페이스 (java.utl 패키지) : 기본 정렬 기준 외에 다른 기준으로 구현할 때 사용
+
+## (2) TreeSet
+```Java
+여러명의 학생이 있다.
+학생은 학번, 이름, 점수를 가지고 있다.
+아래 조건이 충족 되도록 작성하시오
+
+- 학번이 같으면 같은 학생으로 취급한다.
+- 점수 | 학번 | 이름을 기준으로 정렬되어 TreeSet에 저장될 수 있도록 하세요
+```
