@@ -697,3 +697,31 @@ public boolean equals(Object obj) {
 - 학번이 같으면 같은 학생으로 취급한다.
 - 점수 | 학번 | 이름을 기준으로 정렬되어 TreeSet에 저장될 수 있도록 하세요
 ```
+## 3. Map 인터페이스
+:키(key)와 값(value)을 하나의 쌍으로 묶어서 저장하는 컬렉션
+  - 키는 중복될 수 없지만, 값은 중복을 허용한다. (기존에 저장된 데이터에 중복된 키와 데이터를 넣을 경우, 값이 덮어 씌워진다)
+
+## Map 인터페이스 계층도
+  ![alt text](image-3.png)
+
+  멤버|설명
+  ---|---
+  boolean containsKey(Object k)|저장된 k객체와 일치하는 Map의 key객체가 있는지?
+  boolean containsValue(Object k)|저장된 k 객체와 일치하는 Map의 value객체가 있는지?
+  Set entrySet()|Map에 저장된 key-value을 Map.Entry타입 객체로 저장한 Set으로 반환
+  Object get(Object k)| 주어진 k객체에 대응하는 value 객체를 찾아 반환
+  Set keySet()|Map에 저장된 모든 key 객체 반환
+  Object put(Object k, Object v)|Map에 저장
+  Object putAll(Map<Object k, Object v> m)|Map 객체의 데이터를 모두 저장한다
+  Object remove(Object k)|Map객체 key와 매핑된 k값을 삭제한다.
+
+  ## (1) HashMap
+  Map 인터페이스를 구현한 클래스, 데이터를 키와 값의 쌍으로 저장한다.
+  Key가 해싱되어있어 검색 속도가 빠르다
+
+
+
+
+
+
+

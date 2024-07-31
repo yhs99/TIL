@@ -2,7 +2,7 @@ package webhsy.ex;
 
 import java.util.Comparator;
 
-public class StudentSortAscByStuNo implements Comparator<Student>{
+public class StudentSortAscByStuNo implements Sortable, Comparator<Student>{
 
 	@Override
 	public int compare(Student o1, Student o2) {

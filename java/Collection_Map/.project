@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Collection_ArrayList</name>
+	<name>Collection_Map</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1722386945633</id>
+			<id>1722395810886</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

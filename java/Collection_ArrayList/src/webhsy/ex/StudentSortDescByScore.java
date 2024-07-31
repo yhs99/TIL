@@ -2,16 +2,11 @@ package webhsy.ex;
 
 import java.util.Comparator;
 
-public class StudentSortDescByScore implements Comparator<Student>{
+public class StudentSortDescByScore implements Sortable, Comparator<Student>{
 
 	@Override
 	public int compare(Student o1, Student o2) {
-		int comInt = Integer.compare(o1.getScore(), o2.getScore());
-		int compares = o1.getStuNo().compareTo(o2.getStuNo());	
-        if (compares != 0) {
-            return compares;
-        }
-        return comInt;
+        return Integer.compare(o2.getScore(), o1.getScore());
 	}
 
 }
