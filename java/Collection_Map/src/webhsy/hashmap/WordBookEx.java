@@ -8,21 +8,7 @@ public class WordBookEx {
 	public static WordBookImpl wordAction = new WordBookImpl();
 	
 	public static void main(String[] args) {
-		while(true) {
-			try {
-				Scanner sc = new Scanner(System.in);
-				System.out.println("1. 영단어 추가하기");
-				System.out.println("2. 영단어 검색하기");
-				System.out.println("3. 영단어 뜻으로 검색하기");
-				System.out.println("4. 영단어 삭제하기");
-				System.out.println("5. 영단어 목록보기");
-				System.out.println("9. 종료");
-				System.out.printf("선택 ==> ");
-				action(sc.nextInt());
-			}catch(InputMismatchException e) {
-				System.out.println("정확한 메뉴를 선택하세요");
-			}
-		}
+		run();
 	}
 	
 	public static void action(int num) {
@@ -58,6 +44,23 @@ public class WordBookEx {
 			System.exit(0);
 		default:
 			throw new InputMismatchException();
+		}
+	}
+	public static void run() {
+		while(true) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("1. 영단어 추가하기");
+			System.out.println("2. 영단어 검색하기");
+			System.out.println("3. 영단어 뜻으로 검색하기");
+			System.out.println("4. 영단어 삭제하기");
+			System.out.println("5. 영단어 목록보기");
+			System.out.println("9. 종료");
+			System.out.printf("선택 ==> ");
+			try {
+				action(sc.nextInt());
+			}catch(InputMismatchException e) {
+				System.out.println("정확한 메뉴를 선택하세요");
+			}
 		}
 	}
 }

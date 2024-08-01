@@ -74,7 +74,6 @@ public class WordBookImpl implements WordBook{
 					ArrayList<String> foundMean = found.getValue();
 					displayMean(foundKey, foundMean);
 				}
-				System.out.println("-----------------------------");
 			}else {
 				throw new WordNotFoundException();
 			}
