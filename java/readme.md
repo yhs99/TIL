@@ -743,3 +743,19 @@ Board클래스 : 글번호, 제목, 내용, 글쓴이
 같으면 무승부
 ```
 
+# JAVA 08. 파일처리
+
+## 스트림의 종류
+: 어떤 데이터를 입/출력하느냐에 따라 두 종류로 구분
+  - 바이트 스트림 : 이미지, 멀티미디어, 등 모든 종류의 데이터를 입출력할 때 사용
+  - 문자 스트림 : 문자만 입출력할 때 사용
+  
+  ||바이트스트림||문자스트림
+  ---|---|---|---
+  ||입력스트림|출력스트림|입력스트림|출력스트림
+  최상위(추상)클래스|InputStream|OutpuStream|Reader|Writer
+  하위클래스|~~InputStream ex. FileInputStream|~~OutputStream ex.FileOutputStream|~~Reader ex.FileReader|~~Writer ex. FileWirter
+
+
+## (1) 바이트 기반 스트림 - InputStream, OutputStream
+: 입출력 데이터를 바이트 (byte=8bit) 단위로 처리
