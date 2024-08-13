@@ -110,4 +110,10 @@ public class ServletFilterAnnotation implements Filter {
 
 # JSP 03. 내장객체 (Implicit Object)
 - JSP에서 사용자가 객체를 생성하지 않아도, 이미 생성되어 사용할 수 있는 객체를 의미한다.
-- 
+
+# application
+: 하나의 웹 어플리케이션을 관리하고 웹 어플리케이션 안에서의 자원을 담고 있는 객체 웹 어플리케이션당 하나만 생성되고 모든 jsp에서 접근 가능하다.
+<br>
+(웹 어플리에키션 정보, 서버의 정보, 서버의 물리적 경로 등을 얻어오는 데 사용)
+![alt text](image-1.png)
+

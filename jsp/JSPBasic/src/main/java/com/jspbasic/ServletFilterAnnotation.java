@@ -21,7 +21,6 @@ public class ServletFilterAnnotation implements Filter {
 			throws IOException, ServletException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=utf-8");
-		
 		chain.doFilter(request, response);
 	}
 
