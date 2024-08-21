@@ -759,3 +759,8 @@ Board클래스 : 글번호, 제목, 내용, 글쓴이
 
 ## (1) 바이트 기반 스트림 - InputStream, OutputStream
 : 입출력 데이터를 바이트 (byte=8bit) 단위로 처리
+
+입력스트림|출력스트림|입출력 대상 종류
+---|---|---|
+FileInputStream|FileOutputStream|파일
+  

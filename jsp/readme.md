@@ -117,3 +117,59 @@ public class ServletFilterAnnotation implements Filter {
 (웹 어플리에키션 정보, 서버의 정보, 서버의 물리적 경로 등을 얻어오는 데 사용)
 ![alt text](image-1.png)
 
+
+# JDBC
+
+## 1. DBCP설정
+- tomcat > context.xml <br>
+Resource 추가
+```xml
+    <Resource name="jdbc/AjaxJSP" auth="Container"
+              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+              url="jdbc:oracle:thin:@127.0.0.1:1521:mySID"
+              username="hr" password="1234" maxTotal="20" maxIdle="10"
+              maxWaitMillis="-1"/>
+```
+
+- 내프로젝트/WEB-INF/web.xml
+```xml
+DB jndi 설정 추가
+<resource-ref>
+	<description>Oracle Datasource</description>
+	<res-ref-name>jdbc/AjaxJSP</res-ref-name>
+	<res-type>javax.sql.DataSource</res-type>
+	<res-auth>Container</res-auth>
+</resource-ref>
+```
+- JNDI(Java Naming and Directory Interface) 는 디렉터리 서비스에서 제공하는 데이터 및 객체를 발견(discover)하고 참고(lookup) 하기 위한 자바 API다. <br>
+(디렉터리 서비스 : 자원을 폴더구조(트리구조)로 만들어서 자원을 빠르게 찾는데 이용)
+
+
+- WEB-INF/lib
+
+[ojdbc6 추가](AjaxJSP/src/main/webapp/WEB-INF/lib/ojdbc6-11.2.0.4.jar)
+
+- Connection 객체 얻어오기
+```JAVA
+package com.ajaxjsp.dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class DBConnection {
+	public static Connection dbConnect() throws NamingException, SQLException {
+		Context initContext = new InitialContext();
+		Context envContext  = (Context)initContext.lookup("java:/comp/env");
+		DataSource ds = (DataSource)envContext.lookup("jdbc/AjaxJSP");
+		Connection conn = ds.getConnection();
+		System.out.println(conn);
+		return conn;
+	}
+}
+
+```
