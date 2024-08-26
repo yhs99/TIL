@@ -204,7 +204,9 @@ public class EmployeesDAOImpl implements EmployeesDAO {
 					+ "AND (lower(e.first_name) LIKE ? or lower(e.last_name) LIKE ?) "
 					+ "AND quit_date is null ";
 			if(!sort.isEmpty() && !method.isEmpty()) {
-				query += "ORDER BY " + sort + " " + method;
+				if(isValidSort(sort, method)) {
+					query += "ORDER BY " + sort + " " + method;
+				}
 			}
 			System.out.println("SEARCH Q : " + query);
 			pstmt = conn.prepareStatement(query);
@@ -230,6 +232,21 @@ public class EmployeesDAOImpl implements EmployeesDAO {
 			e.printStackTrace();
 		}
 		return employees;
+	}
+	
+	private static boolean isValidSort(String sort, String method) {
+		String[] column = {"employee_id", "hire_date", "salary"};
+		String[] met = {"asc", "desc"};
+		for(String col : column) {
+			if(col.equals(sort)) {
+				for(String m : met) {
+					if(m.equals(method.toLowerCase())) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 }
